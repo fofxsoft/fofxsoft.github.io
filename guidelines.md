@@ -35,14 +35,6 @@
   1. [Standard Library](#standard-library)
   1. [Testing](#testing)
   1. [Performance](#performance)
-  1. [Resources](#resources)
-  1. [In the Wild](#in-the-wild)
-  1. [Translation](#translation)
-  1. [The JavaScript Style Guide Guide](#the-javascript-style-guide-guide)
-  1. [Chat With Us About JavaScript](#chat-with-us-about-javascript)
-  1. [Contributors](#contributors)
-  1. [License](#license)
-  1. [Amendments](#amendments)
 
 ## Types
 
@@ -1292,6 +1284,7 @@
   <a name="modules--no-duplicate-imports"></a>
   - [10.4](#modules--no-duplicate-imports) Only import from a path in one place.
  eslint: [`no-duplicate-imports`](https://eslint.org/docs/rules/no-duplicate-imports)
+
     > Why? Having multiple lines that import from the same path can make code harder to maintain.
 
     ```javascript
@@ -1313,6 +1306,7 @@
   <a name="modules--no-mutable-exports"></a>
   - [10.5](#modules--no-mutable-exports) Do not export mutable bindings.
  eslint: [`import/no-mutable-exports`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-mutable-exports.md)
+
     > Why? Mutation should be avoided in general, but in particular when exporting mutable bindings. While this technique may be needed for some special cases, in general, only constant references should be exported.
 
     ```javascript
@@ -1328,6 +1322,7 @@
   <a name="modules--prefer-default-export"></a>
   - [10.6](#modules--prefer-default-export) In modules with a single export, prefer default export over named export.
  eslint: [`import/prefer-default-export`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/prefer-default-export.md)
+
     > Why? To encourage more files that only ever export one thing, which is better for readability and maintainability.
 
     ```javascript
@@ -1341,6 +1336,7 @@
   <a name="modules--imports-first"></a>
   - [10.7](#modules--imports-first) Put all `import`s above non-import statements.
  eslint: [`import/first`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/first.md)
+
     > Why? Since `import`s are hoisted, keeping them all at the top prevents surprising behavior.
 
     ```javascript
@@ -1379,6 +1375,7 @@
   <a name="modules--no-webpack-loader-syntax"></a>
   - [10.9](#modules--no-webpack-loader-syntax) Disallow Webpack loader syntax in module import statements.
  eslint: [`import/no-webpack-loader-syntax`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-webpack-loader-syntax.md)
+
     > Why? Since using Webpack syntax in the imports couples the code to a module bundler. Prefer using the loader syntax in `webpack.config.js`.
 
     ```javascript
@@ -1407,16 +1404,20 @@
 
     // bad
     let sum = 0;
+    
     for (let num of numbers) {
       sum += num;
     }
+    
     sum === 15;
 
     // good
     let sum = 0;
+    
     numbers.forEach((num) => {
       sum += num;
     });
+    
     sum === 15;
 
     // best (use the functional force)
@@ -1425,12 +1426,14 @@
 
     // bad
     const increasedByOne = [];
+    
     for (let i = 0; i < numbers.length; i++) {
       increasedByOne.push(numbers[i] + 1);
     }
 
     // good
     const increasedByOne = [];
+    
     numbers.forEach((num) => {
       increasedByOne.push(num + 1);
     });
@@ -1513,32 +1516,32 @@
   - [12.1](#properties--dot) Use dot notation when accessing properties. eslint: [`dot-notation`](https://eslint.org/docs/rules/dot-notation.html)
 
     ```javascript
-    const luke = {
-      jedi: true,
-      age: 28,
+    const peter = {
+      fat: true,
+      age: 32,
     };
 
     // bad
-    const isJedi = luke['jedi'];
+    const isFat = peter["fat"];
 
     // good
-    const isJedi = luke.jedi;
+    const isFat = peter.fat;
     ```
 
   <a name="properties--bracket"></a><a name="12.2"></a>
   - [12.2](#properties--bracket) Use bracket notation `[]` when accessing properties with a variable.
 
     ```javascript
-    const luke = {
-      jedi: true,
-      age: 28,
+    const peter = {
+      fat: true,
+      age: 32,
     };
 
     function getProp(prop) {
-      return luke[prop];
+      return peter[prop];
     }
 
-    const isJedi = getProp('jedi');
+    const isFat = getProp("fat");
     ```
   <a name="es2016-properties--exponentiation-operator"></a>
   - [12.3](#es2016-properties--exponentiation-operator) Use exponentiation operator `**` when calculating exponentiations. eslint: [`no-restricted-properties`](https://eslint.org/docs/rules/no-restricted-properties).
@@ -1575,18 +1578,18 @@
     // bad
     const items = getItems(),
         goSportsTeam = true,
-        dragonball = 'z';
+        dragonball = "z";
 
     // bad
     // (compare to above, and try to spot the mistake)
     const items = getItems(),
         goSportsTeam = true;
-        dragonball = 'z';
+        dragonball = "z";
 
     // good
     const items = getItems();
     const goSportsTeam = true;
-    const dragonball = 'z';
+    const dragonball = "z";
     ```
 
   <a name="variables--const-let-group"></a><a name="13.3"></a>
@@ -1625,12 +1628,12 @@
     function checkName(hasName) {
       const name = getName();
 
-      if (hasName === 'test') {
+      if (hasName === "test") {
         return false;
       }
 
-      if (name === 'test') {
-        this.setName('');
+      if (name === "test") {
+        this.setName("");
         return false;
       }
 
@@ -1639,14 +1642,14 @@
 
     // good
     function checkName(hasName) {
-      if (hasName === 'test') {
+      if (hasName === "test") {
         return false;
       }
 
       const name = getName();
 
-      if (name === 'test') {
-        this.setName('');
+      if (name === "test") {
+        this.setName("");
         return false;
       }
 
@@ -1701,9 +1704,11 @@
 
     let sum = 0;
     let truthyCount = 0;
+
     for (let i = 0; i < array.length; i++) {
       let value = array[i];
       sum += value;
+
       if (value) {
         truthyCount++;
       }
@@ -1732,7 +1737,7 @@
 
     // bad
     const foo
-      = 'superLongLongLongLongLongLongLongLongString';
+      = "superLongLongLongLongLongLongLongLongString";
 
     // good
     const foo = (
@@ -1740,7 +1745,7 @@
     );
 
     // good
-    const foo = 'superLongLongLongLongLongLongLongLongString';
+    const foo = "superLongLongLongLongLongLongLongLongString";
     ```
 
 <a name="variables--no-unused-vars"></a>
@@ -1833,7 +1838,7 @@
       anonymous(); // => TypeError anonymous is not a function
 
       var anonymous = function () {
-        console.log('anonymous function expression');
+        console.log("anonymous function expression");
       };
     }
     ```
@@ -1850,7 +1855,7 @@
       superPower(); // => ReferenceError superPower is not defined
 
       var named = function superPower() {
-        console.log('Flying');
+        console.log("Flying");
       };
     }
 
@@ -1862,7 +1867,7 @@
       named(); // => TypeError named is not a function
 
       var named = function named() {
-        console.log('named');
+        console.log("named");
       };
     }
     ```
@@ -1875,7 +1880,7 @@
       superPower(); // => Flying
 
       function superPower() {
-        console.log('Flying');
+        console.log("Flying");
       }
     }
     ```
@@ -1926,7 +1931,7 @@
     }
 
     // good
-    if (name !== '') {
+    if (name !== "") {
       // ...
     }
 
@@ -1981,11 +1986,13 @@
         function f() {
           // ...
         }
+
         break;
       }
       case 4:
         bar();
         break;
+
       default: {
         class C {}
       }
@@ -2002,15 +2009,15 @@
       : value1 > value2 ? "baz" : null;
 
     // split into 2 separated ternary expressions
-    const maybeNull = value1 > value2 ? 'baz' : null;
+    const maybeNull = value1 > value2 ? "baz" : null;
 
     // better
     const foo = maybe1 > maybe2
-      ? 'bar'
+      ? "bar"
       : maybeNull;
 
     // best
-    const foo = maybe1 > maybe2 ? 'bar' : maybeNull;
+    const foo = maybe1 > maybe2 ? "bar" : maybeNull;
     ```
 
   <a name="comparison--unneeded-ternary"></a><a name="15.7"></a>
@@ -2188,26 +2195,26 @@
 
     ```javascript
     // bad
-    if ((foo === 123 || bar === 'abc') && doesItLookGoodWhenItBecomesThatLong() && isThisReallyHappening()) {
+    if ((foo === 123 || bar === "abc") && doesItLookGoodWhenItBecomesThatLong() && isThisReallyHappening()) {
       thing1();
     }
 
     // bad
     if (foo === 123 &&
-      bar === 'abc') {
+      bar === "abc") {
       thing1();
     }
 
     // bad
     if (foo === 123
-      && bar === 'abc') {
+      && bar === "abc") {
       thing1();
     }
 
     // bad
     if (
       foo === 123 &&
-      bar === 'abc'
+      bar === "abc"
     ) {
       thing1();
     }
@@ -2215,14 +2222,14 @@
     // good
     if (
       foo === 123
-      && bar === 'abc'
+      && bar === "abc"
     ) {
       thing1();
     }
 
     // good
     if (
-      (foo === 123 || bar === 'abc')
+      (foo === 123 || bar === "abc")
       && doesItLookGoodWhenItBecomesThatLong()
       && isThisReallyHappening()
     ) {
@@ -2230,7 +2237,7 @@
     }
 
     // good
-    if (foo === 123 && bar === 'abc') {
+    if (foo === 123 && bar === "abc") {
       thing1();
     }
     ```
@@ -2283,7 +2290,7 @@
     ```
 
   <a name="comments--singleline"></a><a name="17.2"></a>
-  - [18.2](#comments--singleline) Use `//` for single line comments. Place single line comments on a newline above the subject of the comment. Put an empty line before the comment unless it’s on the first line of a block.
+  - [18.2](#comments--singleline) Use `//` for single line comments. Place single line comments on a newline above the subject of the comment. Put an empty line before the comment.
 
     ```javascript
     // bad
@@ -2296,26 +2303,27 @@
     // bad
     function getType() {
       console.log('fetching type...');
-      // set the default type to 'no type'
-      const type = this.type || 'no type';
+      // set the default type to "no type"
+      const type = this.type || "no type";
 
       return type;
     }
 
     // good
     function getType() {
-      console.log('fetching type...');
+      console.log("fetching type...");
 
-      // set the default type to 'no type'
-      const type = this.type || 'no type';
+      // set the default type to "no type"
+      const type = this.type || "no type";
 
       return type;
     }
 
     // also good
     function getType() {
-      // set the default type to 'no type'
-      const type = this.type || 'no type';
+
+      // set the default type to "no type"
+      const type = this.type || "no type";
 
       return type;
     }
@@ -2394,12 +2402,12 @@
 ## Whitespace
 
   <a name="whitespace--spaces"></a><a name="18.1"></a>
-  - [19.1](#whitespace--spaces) Use soft tabs (space character) set to 2 spaces. eslint: [`indent`](https://eslint.org/docs/rules/indent.html)
+  - [19.1](#whitespace--spaces) Use soft tabs (space character) set to 4 spaces. eslint: [`indent`](https://eslint.org/docs/rules/indent.html)
 
     ```javascript
     // bad
     function foo() {
-    ∙∙∙∙let name;
+    ∙∙let name;
     }
 
     // bad
@@ -2409,7 +2417,7 @@
 
     // good
     function baz() {
-    ∙∙let name;
+    ∙∙∙∙let name;
     }
     ```
 
@@ -2419,24 +2427,24 @@
     ```javascript
     // bad
     function test(){
-      console.log('test');
+      console.log("test");
     }
 
     // good
     function test() {
-      console.log('test');
+      console.log("test");
     }
 
     // bad
-    dog.set('attr',{
-      age: '1 year',
-      breed: 'Bernese Mountain Dog',
+    dog.set("attr",{
+      age: "1 year",
+      breed: "Bernese Mountain Dog",
     });
 
     // good
-    dog.set('attr', {
-      age: '1 year',
-      breed: 'Bernese Mountain Dog',
+    dog.set("attr", {
+      age: "1 year",
+      breed: "Bernese Mountain Dog",
     });
     ```
 
@@ -2456,12 +2464,12 @@
 
     // bad
     function fight () {
-      console.log ('Swooosh!');
+      console.log ("Swooosh!");
     }
 
     // good
     function fight() {
-      console.log('Swooosh!');
+      console.log("Swooosh!");
     }
     ```
 
@@ -2481,14 +2489,14 @@
 
     ```javascript
     // bad
-    import { es6 } from './AirbnbStyleGuide';
+    import { es6 } from "./EncompassStyleGuide";
       // ...
     export default es6;
     ```
 
     ```javascript
     // bad
-    import { es6 } from './AirbnbStyleGuide';
+    import { es6 } from "./EncompassStyleGuide";
       // ...
     export default es6;↵
     ↵
@@ -2496,53 +2504,50 @@
 
     ```javascript
     // good
-    import { es6 } from './AirbnbStyleGuide';
+    import { es6 } from "./EncompassStyleGuide";
       // ...
     export default es6;↵
     ```
 
   <a name="whitespace--chains"></a><a name="18.6"></a>
-  - [19.6](#whitespace--chains) Use indentation when making long method chains (more than 2 method chains). Use a leading dot, which
-    emphasizes that the line is a method call, not a new statement. eslint: [`newline-per-chained-call`](https://eslint.org/docs/rules/newline-per-chained-call) [`no-whitespace-before-property`](https://eslint.org/docs/rules/no-whitespace-before-property)
+  - [19.6](#whitespace--chains) Use indentation, and line up with the first dot when making long method chains (more than 2 method chains). Use a leading dot, which emphasizes that the line is a method call, not a new statement. eslint: [`newline-per-chained-call`](https://eslint.org/docs/rules/newline-per-chained-call) [`no-whitespace-before-property`](https://eslint.org/docs/rules/no-whitespace-before-property)
 
     ```javascript
     // bad
-    $('#items').find('.selected').highlight().end().find('.open').updateCount();
+    $("#items").find(".selected").highlight().end().find(".open").updateCount();
 
     // bad
-    $('#items').
-      find('.selected').
+    $("#items").
+      find(".selected").
         highlight().
         end().
-      find('.open').
+      find(".open").
         updateCount();
 
     // good
-    $('#items')
-      .find('.selected')
-        .highlight()
-        .end()
-      .find('.open')
-        .updateCount();
+    $("#items").find(".selected")
+               .highlight()
+               .end()
+               .find(".open")
+               .updateCount();
 
     // bad
-    const leds = stage.selectAll('.led').data(data).enter().append('svg:svg').classed('led', true)
-        .attr('width', (radius + margin) * 2).append('svg:g')
-        .attr('transform', `translate(${radius + margin},${radius + margin})`)
+    const leds = stage.selectAll(".led").data(data).enter().append("svg:svg").classed("led", true)
+        .attr("width", (radius + margin) * 2).append("svg:g")
+        .attr("transform", `translate(${radius + margin},${radius + margin})`)
         .call(tron.led);
 
     // good
-    const leds = stage.selectAll('.led')
-        .data(data)
-      .enter().append('svg:svg')
-        .classed('led', true)
-        .attr('width', (radius + margin) * 2)
-      .append('svg:g')
-        .attr('transform', `translate(${radius + margin},${radius + margin})`)
-        .call(tron.led);
+    const leds = stage.selectAll(".led").data(data)
+                      .enter().append("svg:svg")
+                      .classed("led", true)
+                      .attr("width", (radius + margin) * 2)
+                      .append("svg:g")
+                      .attr("transform", `translate(${radius + margin},${radius + margin})`)
+                      .call(tron.led);
 
     // good
-    const leds = stage.selectAll('.led').data(data);
+    const leds = stage.selectAll(".led").data(data);
     ```
 
   <a name="whitespace--after-blocks"></a><a name="18.7"></a>
@@ -2687,10 +2692,15 @@
 
     ```javascript
     // bad
-    const foo = {clark: 'kent'};
+    const foo = {clark: "kent"};
 
     // good
-    const foo = { clark: 'kent' };
+    const foo = { clark: "kent" };
+
+    // good
+    const foo = {
+        clark: "kent"
+    };
     ```
 
   <a name="whitespace--max-len"></a><a name="18.12"></a>
@@ -2703,24 +2713,24 @@
     const foo = jsonData && jsonData.foo && jsonData.foo.bar && jsonData.foo.bar.baz && jsonData.foo.bar.baz.quux && jsonData.foo.bar.baz.quux.xyzzy;
 
     // bad
-    $.ajax({ method: 'POST', url: 'https://airbnb.com/', data: { name: 'John' } }).done(() => console.log('Congratulations!')).fail(() => console.log('You have failed this city.'));
+    $.ajax({ method: "POST", url: "https://test.encompass8.com/", data: { name: "John" } }).done(() => console.log("Congratulations!")).fail(() => console.log("You have made a party foul."));
 
     // good
     const foo = jsonData
-      && jsonData.foo
-      && jsonData.foo.bar
-      && jsonData.foo.bar.baz
-      && jsonData.foo.bar.baz.quux
-      && jsonData.foo.bar.baz.quux.xyzzy;
+             && jsonData.foo
+             && jsonData.foo.bar
+             && jsonData.foo.bar.baz
+             && jsonData.foo.bar.baz.quux
+             && jsonData.foo.bar.baz.quux.xyzzy;
 
     // good
     $.ajax({
-      method: 'POST',
-      url: 'https://airbnb.com/',
-      data: { name: 'John' },
+      method: "POST",
+      url: "https://test.encompass8.com/",
+      data: { name: "John" },
     })
-      .done(() => console.log('Congratulations!'))
-      .fail(() => console.log('You have failed this city.'));
+     .done(() => console.log("Congratulations!"))
+     .fail(() => console.log("You have made a party foul."));
     ```
 
   <a name="whitespace--block-spacing"></a>
@@ -2755,13 +2765,13 @@
     ```javascript
     // bad
     obj[foo ]
-    obj[ 'foo']
+    obj[ "foo"]
     var x = {[ b ]: a}
     obj[foo[ bar ]]
 
     // good
     obj[foo]
-    obj['foo']
+    obj["foo"]
     var x = { [b]: a }
     obj[foo[bar]]
     ```
@@ -2811,6 +2821,10 @@
     var x = 1;
 
     var y = 2;
+
+    // good
+    var x = 1;
+    var y = 2;
     ```
     <!-- markdownlint-enable MD012 -->
 
@@ -2833,76 +2847,59 @@
     const story = [
       once,
       upon,
-      aTime,
+      aTime
     ];
 
     // bad
     const hero = {
-        firstName: 'Ada'
-      , lastName: 'Lovelace'
+        firstName: "Ada"
+      , lastName: "Lovelace"
       , birthYear: 1815
-      , superPower: 'computers'
+      , superPower: "computers"
     };
 
     // good
     const hero = {
-      firstName: 'Ada',
-      lastName: 'Lovelace',
+      firstName: "Ada",
+      lastName: "Lovelace",
       birthYear: 1815,
-      superPower: 'computers',
+      superPower: "computers"
     };
     ```
 
   <a name="commas--dangling"></a><a name="19.2"></a>
-  - [20.2](#commas--dangling) Additional trailing comma: **Yup.** eslint: [`comma-dangle`](https://eslint.org/docs/rules/comma-dangle.html)
+  - [20.2](#commas--dangling) Additional trailing comma: **Nope.** eslint: [`comma-dangle`](https://eslint.org/docs/rules/comma-dangle.html)
 
-    > Why? This leads to cleaner git diffs. Also, transpilers like Babel will remove the additional trailing comma in the transpiled code which means you don’t have to worry about the [trailing comma problem](https://github.com/airbnb/javascript/blob/es5-deprecated/es5/README.md#commas) in legacy browsers.
-
-    ```diff
-    // bad - git diff without trailing comma
-    const hero = {
-         firstName: 'Florence',
-    -    lastName: 'Nightingale'
-    +    lastName: 'Nightingale',
-    +    inventorOf: ['coxcomb chart', 'modern nursing']
-    };
-
-    // good - git diff with trailing comma
-    const hero = {
-         firstName: 'Florence',
-         lastName: 'Nightingale',
-    +    inventorOf: ['coxcomb chart', 'modern nursing'],
-    };
-    ```
+    > Why? We do not use transpilers which remove the additional trailing comma in the transpiled code. Some browsers and legacy browsers will throw an error.
 
     ```javascript
     // bad
     const hero = {
-      firstName: 'Dana',
-      lastName: 'Scully'
+      firstName: "Dana",
+      lastName: "Scully",
     };
 
     const heroes = [
-      'Batman',
-      'Superman'
+      "Iron Man",
+      "Thor",
     ];
 
     // good
     const hero = {
-      firstName: 'Dana',
-      lastName: 'Scully',
+      firstName: "Dana",
+      lastName: "Scully"
     };
 
     const heroes = [
-      'Batman',
-      'Superman',
+      "Iron Man",
+      "Thor"
     ];
 
     // bad
     function createHero(
       firstName,
       lastName,
-      inventorOf
+      inventorOf,
     ) {
       // does nothing
     }
@@ -2911,7 +2908,7 @@
     function createHero(
       firstName,
       lastName,
-      inventorOf,
+      inventorOf
     ) {
       // does nothing
     }
@@ -2930,14 +2927,14 @@
     createHero(
       firstName,
       lastName,
-      inventorOf
+      inventorOf,
     );
 
     // good
     createHero(
       firstName,
       lastName,
-      inventorOf,
+      inventorOf
     );
 
     // good (note that a comma must not appear after a "rest" element)
@@ -2962,7 +2959,7 @@
     // bad - raises exception
     const luke = {}
     const leia = {}
-    [luke, leia].forEach(jedi => jedi.father = 'vader')
+    [luke, leia].forEach(jedi => jedi.father = "vader")
 
     // bad - raises exception
     const reaction = "No! That’s impossible!"
@@ -2974,18 +2971,20 @@
     // bad - returns `undefined` instead of the value on the next line - always happens when `return` is on a line by itself because of ASI!
     function foo() {
       return
-        'search your feelings, you know it to be foo'
+        "search your feelings, you know it to be foo"
     }
 
     // good
     const luke = {};
     const leia = {};
+
     [luke, leia].forEach((jedi) => {
-      jedi.father = 'vader';
+      jedi.father = "vader";
     });
 
     // good
     const reaction = "No! That’s impossible!";
+
     (async function meanwhileOnTheFalcon() {
       // handle `leia`, `lando`, `chewie`, `r2`, `c3p0`
       // ...
@@ -2993,7 +2992,7 @@
 
     // good
     function foo() {
-      return 'search your feelings, you know it to be foo';
+      return "search your feelings, you know it to be foo";
     }
     ```
 
@@ -3016,10 +3015,10 @@
     const totalScore = new String(this.reviewScore); // typeof totalScore is "object" not "string"
 
     // bad
-    const totalScore = this.reviewScore + ''; // invokes this.reviewScore.valueOf()
+    const totalScore = this.reviewScore + ""; // invokes this.reviewScore.valueOf()
 
     // bad
-    const totalScore = this.reviewScore.toString(); // isn’t guaranteed to return a string
+    const totalScore = this.reviewScore.toString(); // isn't guaranteed to return a string
 
     // good
     const totalScore = String(this.reviewScore);
@@ -3029,7 +3028,7 @@
   - [22.3](#coercion--numbers) Numbers: Use `Number` for type casting and `parseInt` always with a radix for parsing strings. eslint: [`radix`](https://eslint.org/docs/rules/radix) [`no-new-wrappers`](https://eslint.org/docs/rules/no-new-wrappers)
 
     ```javascript
-    const inputValue = '4';
+    const inputValue = "4";
 
     // bad
     const val = new Number(inputValue);
@@ -3131,7 +3130,7 @@
     }
 
     const bad = new user({
-      name: 'nope',
+      name: "nope",
     });
 
     // good
@@ -3142,7 +3141,7 @@
     }
 
     const good = new User({
-      name: 'yup',
+      name: "yup",
     });
     ```
 
@@ -3153,17 +3152,17 @@
 
     ```javascript
     // bad
-    this.__firstName__ = 'Panda';
-    this.firstName_ = 'Panda';
-    this._firstName = 'Panda';
+    this.__firstName__ = "Panda";
+    this.firstName_ = "Panda";
+    this._firstName = "Panda";
 
     // good
-    this.firstName = 'Panda';
+    this.firstName = "Panda";
 
     // good, in environments where WeakMaps are available
     // see https://kangax.github.io/compat-table/es6/#test-WeakMap
     const firstNames = new WeakMap();
-    firstNames.set(this, 'Panda');
+    firstNames.set(this, "Panda");
     ```
 
   <a name="naming--self-this"></a><a name="22.5"></a>
@@ -3212,21 +3211,21 @@
 
     // in some other file
     // bad
-    import CheckBox from './checkBox'; // PascalCase import/export, camelCase filename
-    import FortyTwo from './FortyTwo'; // PascalCase import/filename, camelCase export
-    import InsideDirectory from './InsideDirectory'; // PascalCase import/filename, camelCase export
+    import CheckBox from "./checkBox"; // PascalCase import/export, camelCase filename
+    import FortyTwo from "./FortyTwo"; // PascalCase import/filename, camelCase export
+    import InsideDirectory from "./InsideDirectory"; // PascalCase import/filename, camelCase export
 
     // bad
-    import CheckBox from './check_box'; // PascalCase import/export, snake_case filename
-    import forty_two from './forty_two'; // snake_case import/filename, camelCase export
-    import inside_directory from './inside_directory'; // snake_case import, camelCase export
-    import index from './inside_directory/index'; // requiring the index file explicitly
-    import insideDirectory from './insideDirectory/index'; // requiring the index file explicitly
+    import CheckBox from "./check_box"; // PascalCase import/export, snake_case filename
+    import forty_two from "./forty_two"; // snake_case import/filename, camelCase export
+    import inside_directory from "./inside_directory"; // snake_case import, camelCase export
+    import index from "./inside_directory/index"; // requiring the index file explicitly
+    import insideDirectory from "./insideDirectory/index"; // requiring the index file explicitly
 
     // good
-    import CheckBox from './CheckBox'; // PascalCase export/import/filename
-    import fortyTwo from './fortyTwo'; // camelCase export/import/filename
-    import insideDirectory from './insideDirectory'; // camelCase export/import/directory name/implicit "index"
+    import CheckBox from "./CheckBox"; // PascalCase export/import/filename
+    import fortyTwo from "./fortyTwo"; // camelCase export/import/filename
+    import insideDirectory from "./insideDirectory"; // camelCase export/import/directory name/implicit "index"
     // ^ supports both insideDirectory.js and insideDirectory/index.js
     ```
 
@@ -3245,12 +3244,12 @@
   - [23.8](#naming--PascalCase-singleton) Use PascalCase when you export a constructor / class / singleton / function library / bare object.
 
     ```javascript
-    const AirbnbStyleGuide = {
+    const EncompassStyleGuide = {
       es6: {
       },
     };
 
-    export default AirbnbStyleGuide;
+    export default EncompassStyleGuide;
     ```
 
   <a name="naming--Acronyms-and-Initialisms"></a>
@@ -3260,7 +3259,7 @@
 
     ```javascript
     // bad
-    import SmsContainer from './containers/SmsContainer';
+    import SmsContainer from "./containers/SmsContainer";
 
     // bad
     const HttpRequests = [
@@ -3268,7 +3267,7 @@
     ];
 
     // good
-    import SMSContainer from './containers/SMSContainer';
+    import SMSContainer from "./containers/SMSContainer";
 
     // good
     const HTTPRequests = [
@@ -3281,7 +3280,7 @@
     ];
 
     // best
-    import TextMessageContainer from './containers/TextMessageContainer';
+    import TextMessageContainer from "./containers/TextMessageContainer";
 
     // best
     const requests = [
@@ -3298,32 +3297,32 @@
 
     ```javascript
     // bad
-    const PRIVATE_VARIABLE = 'should not be unnecessarily uppercased within a file';
+    const PRIVATE_VARIABLE = "should not be unnecessarily uppercased within a file";
 
     // bad
-    export const THING_TO_BE_CHANGED = 'should obviously not be uppercased';
+    export const THING_TO_BE_CHANGED = "should obviously not be uppercased";
 
     // bad
-    export let REASSIGNABLE_VARIABLE = 'do not use let with uppercase variables';
+    export let REASSIGNABLE_VARIABLE = "do not use let with uppercase variables";
 
     // ---
 
     // allowed but does not supply semantic value
-    export const apiKey = 'SOMEKEY';
+    export const apiKey = "SOMEKEY";
 
     // better in most cases
-    export const API_KEY = 'SOMEKEY';
+    export const API_KEY = "SOMEKEY";
 
     // ---
 
     // bad - unnecessarily uppercases key while adding no semantic value
     export const MAPPING = {
-      KEY: 'value'
+      KEY: "value"
     };
 
     // good
     export const MAPPING = {
-      key: 'value'
+      key: "value"
     };
     ```
 
@@ -3382,8 +3381,8 @@
     ```javascript
     class Jedi {
       constructor(options = {}) {
-        const lightsaber = options.lightsaber || 'blue';
-        this.set('lightsaber', lightsaber);
+        const lightsaber = options.lightsaber || "blue";
+        this.set("lightsaber", lightsaber);
       }
 
       set(key, val) {
@@ -3405,11 +3404,11 @@
 
     ```javascript
     // bad
-    $(this).trigger('listingUpdated', listing.id);
+    $(this).trigger("listingUpdated", listing.id);
 
     // ...
 
-    $(this).on('listingUpdated', (e, listingID) => {
+    $(this).on("listingUpdated", (e, listingID) => {
       // do something with listingID
     });
     ```
@@ -3418,11 +3417,11 @@
 
     ```javascript
     // good
-    $(this).trigger('listingUpdated', { listingID: listing.id });
+    $(this).trigger("listingUpdated", { listingID: listing.id });
 
     // ...
 
-    $(this).on('listingUpdated', (e, data) => {
+    $(this).on("listingUpdated", (e, data) => {
       // do something with data.listingID
     });
     ```
@@ -3434,15 +3433,17 @@
   <a name="jquery--dollar-prefix"></a><a name="25.1"></a>
   - [26.1](#jquery--dollar-prefix) Prefix jQuery object variables with a `$`.
 
+    > Why? jQuery variables are cached references to the DOM and should not be confused with logic variables.
+
     ```javascript
     // bad
-    const sidebar = $('.sidebar');
+    const sidebar = $(".sidebar");
 
     // good
-    const $sidebar = $('.sidebar');
+    const $sidebar = $(".sidebar");
 
     // good
-    const $sidebarBtn = $('.sidebar-btn');
+    const $sidebarBtn = $(".sidebar-btn");
     ```
 
   <a name="jquery--cache"></a><a name="25.2"></a>
@@ -3451,24 +3452,25 @@
     ```javascript
     // bad
     function setSidebar() {
-      $('.sidebar').hide();
+      $(".sidebar").hide();
 
       // ...
 
-      $('.sidebar').css({
-        'background-color': 'pink',
+      $(".sidebar").css({
+        "background-color": "pink",
       });
     }
 
     // good
     function setSidebar() {
-      const $sidebar = $('.sidebar');
+      const $sidebar = $(".sidebar");
+
       $sidebar.hide();
 
       // ...
 
       $sidebar.css({
-        'background-color': 'pink',
+        "background-color": "pink",
       });
     }
     ```
@@ -3481,19 +3483,19 @@
 
     ```javascript
     // bad
-    $('ul', '.sidebar').hide();
+    $("ul", ".sidebar").hide();
 
     // bad
-    $('.sidebar').find('ul').hide();
+    $(".sidebar").find("ul").hide();
 
     // good
-    $('.sidebar ul').hide();
+    $(".sidebar ul").hide();
 
     // good
-    $('.sidebar > ul').hide();
+    $(".sidebar > ul").hide();
 
     // good
-    $sidebar.find('ul').hide();
+    $sidebar.find("ul").hide();
     ```
 
 **[⬆ back to top](#table-of-contents)**
@@ -3547,12 +3549,12 @@
 
     ```javascript
     // bad
-    isNaN('1.2'); // false
-    isNaN('1.2.3'); // true
+    isNaN("1.2"); // false
+    isNaN("1.2.3"); // true
 
     // good
-    Number.isNaN('1.2.3'); // false
-    Number.isNaN(Number('1.2.3')); // true
+    Number.isNaN("1.2.3"); // false
+    Number.isNaN(Number("1.2.3")); // true
     ```
 
   <a name="standard-library--isfinite"></a>
@@ -3564,34 +3566,12 @@
 
     ```javascript
     // bad
-    isFinite('2e3'); // true
+    isFinite("2e3"); // true
 
     // good
-    Number.isFinite('2e3'); // false
-    Number.isFinite(parseInt('2e3', 10)); // true
+    Number.isFinite("2e3"); // false
+    Number.isFinite(parseInt("2e3", 10)); // true
     ```
-
-**[⬆ back to top](#table-of-contents)**
-
-## Testing
-
-  <a name="testing--yup"></a><a name="28.1"></a>
-  - [30.1](#testing--yup) **Yup.**
-
-    ```javascript
-    function foo() {
-      return true;
-    }
-    ```
-
-  <a name="testing--for-real"></a><a name="28.2"></a>
-  - [30.2](#testing--for-real) **No, but seriously**:
-    - Whichever testing framework you use, you should be writing tests!
-    - Strive to write many small pure functions, and minimize where mutations occur.
-    - Be cautious about stubs and mocks - they can make your tests more brittle.
-    - We primarily use [`mocha`](https://www.npmjs.com/package/mocha) and [`jest`](https://www.npmjs.com/package/jest) at Airbnb. [`tape`](https://www.npmjs.com/package/tape) is also used occasionally for small, separate modules.
-    - 100% test coverage is a good goal to strive for, even if it’s not always practical to reach it.
-    - Whenever you fix a bug, _write a regression test_. A bug fixed without a regression test is almost certainly going to break again in the future.
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -3608,251 +3588,5 @@
   - Loading...
 
 **[⬆ back to top](#table-of-contents)**
-
-## Resources
-
-**Learning ES6+**
-
-  - [Latest ECMA spec](https://tc39.github.io/ecma262/)
-  - [ExploringJS](http://exploringjs.com/)
-  - [ES6 Compatibility Table](https://kangax.github.io/compat-table/es6/)
-  - [Comprehensive Overview of ES6 Features](http://es6-features.org/)
-
-**Read This**
-
-  - [Standard ECMA-262](http://www.ecma-international.org/ecma-262/6.0/index.html)
-
-**Tools**
-
-  - Code Style Linters
-    - [ESlint](https://eslint.org/) - [Airbnb Style .eslintrc](https://github.com/airbnb/javascript/blob/master/linters/.eslintrc)
-    - [JSHint](http://jshint.com/) - [Airbnb Style .jshintrc](https://github.com/airbnb/javascript/blob/master/linters/.jshintrc)
-  - Neutrino Preset - [@neutrinojs/airbnb](https://neutrinojs.org/packages/airbnb/)
-
-**Other Style Guides**
-
-  - [Google JavaScript Style Guide](https://google.github.io/styleguide/javascriptguide.xml)
-  - [jQuery Core Style Guidelines](https://contribute.jquery.org/style-guide/js/)
-  - [Principles of Writing Consistent, Idiomatic JavaScript](https://github.com/rwaldron/idiomatic.js)
-  - [StandardJS](https://standardjs.com)
-
-**Other Styles**
-
-  - [Naming this in nested functions](https://gist.github.com/cjohansen/4135065) - Christian Johansen
-  - [Conditional Callbacks](https://github.com/airbnb/javascript/issues/52) - Ross Allen
-  - [Popular JavaScript Coding Conventions on GitHub](http://sideeffect.kr/popularconvention/#javascript) - JeongHoon Byun
-  - [Multiple var statements in JavaScript, not superfluous](http://benalman.com/news/2012/05/multiple-var-statements-javascript/) - Ben Alman
-
-**Further Reading**
-
-  - [Understanding JavaScript Closures](https://javascriptweblog.wordpress.com/2010/10/25/understanding-javascript-closures/) - Angus Croll
-  - [Basic JavaScript for the impatient programmer](http://www.2ality.com/2013/06/basic-javascript.html) - Dr. Axel Rauschmayer
-  - [You Might Not Need jQuery](http://youmightnotneedjquery.com/) - Zack Bloom & Adam Schwartz
-  - [ES6 Features](https://github.com/lukehoban/es6features) - Luke Hoban
-  - [Frontend Guidelines](https://github.com/bendc/frontend-guidelines) - Benjamin De Cock
-
-**Books**
-
-  - [JavaScript: The Good Parts](https://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742) - Douglas Crockford
-  - [JavaScript Patterns](https://www.amazon.com/JavaScript-Patterns-Stoyan-Stefanov/dp/0596806752) - Stoyan Stefanov
-  - [Pro JavaScript Design Patterns](https://www.amazon.com/JavaScript-Design-Patterns-Recipes-Problem-Solution/dp/159059908X)  - Ross Harmes and Dustin Diaz
-  - [High Performance Web Sites: Essential Knowledge for Front-End Engineers](https://www.amazon.com/High-Performance-Web-Sites-Essential/dp/0596529309) - Steve Souders
-  - [Maintainable JavaScript](https://www.amazon.com/Maintainable-JavaScript-Nicholas-C-Zakas/dp/1449327680) - Nicholas C. Zakas
-  - [JavaScript Web Applications](https://www.amazon.com/JavaScript-Web-Applications-Alex-MacCaw/dp/144930351X) - Alex MacCaw
-  - [Pro JavaScript Techniques](https://www.amazon.com/Pro-JavaScript-Techniques-John-Resig/dp/1590597273) - John Resig
-  - [Smashing Node.js: JavaScript Everywhere](https://www.amazon.com/Smashing-Node-js-JavaScript-Everywhere-Magazine/dp/1119962595) - Guillermo Rauch
-  - [Secrets of the JavaScript Ninja](https://www.amazon.com/Secrets-JavaScript-Ninja-John-Resig/dp/193398869X) - John Resig and Bear Bibeault
-  - [Human JavaScript](http://humanjavascript.com/) - Henrik Joreteg
-  - [Superhero.js](http://superherojs.com/) - Kim Joar Bekkelund, Mads Mobæk, & Olav Bjorkoy
-  - [JSBooks](http://jsbooks.revolunet.com/) - Julien Bouquillon
-  - [Third Party JavaScript](https://www.manning.com/books/third-party-javascript) - Ben Vinegar and Anton Kovalyov
-  - [Effective JavaScript: 68 Specific Ways to Harness the Power of JavaScript](http://amzn.com/0321812182) - David Herman
-  - [Eloquent JavaScript](http://eloquentjavascript.net/) - Marijn Haverbeke
-  - [You Don’t Know JS: ES6 & Beyond](http://shop.oreilly.com/product/0636920033769.do) - Kyle Simpson
-
-**Blogs**
-
-  - [JavaScript Weekly](http://javascriptweekly.com/)
-  - [JavaScript, JavaScript...](https://javascriptweblog.wordpress.com/)
-  - [Bocoup Weblog](https://bocoup.com/weblog)
-  - [Adequately Good](http://www.adequatelygood.com/)
-  - [NCZOnline](https://www.nczonline.net/)
-  - [Perfection Kills](http://perfectionkills.com/)
-  - [Ben Alman](http://benalman.com/)
-  - [Dmitry Baranovskiy](http://dmitry.baranovskiy.com/)
-  - [nettuts](http://code.tutsplus.com/?s=javascript)
-
-**Podcasts**
-
-  - [JavaScript Air](https://javascriptair.com/)
-  - [JavaScript Jabber](https://devchat.tv/js-jabber/)
-
-**[⬆ back to top](#table-of-contents)**
-
-## In the Wild
-
-  This is a list of organizations that are using this style guide. Send us a pull request and we'll add you to the list.
-
-  - **123erfasst**: [123erfasst/javascript](https://github.com/123erfasst/javascript)
-  - **3blades**: [3Blades](https://github.com/3blades)
-  - **4Catalyzer**: [4Catalyzer/javascript](https://github.com/4Catalyzer/javascript)
-  - **Aan Zee**: [AanZee/javascript](https://github.com/AanZee/javascript)
-  - **Adult Swim**: [adult-swim/javascript](https://github.com/adult-swim/javascript)
-  - **Airbnb**: [airbnb/javascript](https://github.com/airbnb/javascript)
-  - **AltSchool**: [AltSchool/javascript](https://github.com/AltSchool/javascript)
-  - **Apartmint**: [apartmint/javascript](https://github.com/apartmint/javascript)
-  - **Ascribe**: [ascribe/javascript](https://github.com/ascribe/javascript)
-  - **Avalara**: [avalara/javascript](https://github.com/avalara/javascript)
-  - **Avant**: [avantcredit/javascript](https://github.com/avantcredit/javascript)
-  - **Axept**: [axept/javascript](https://github.com/axept/javascript)
-  - **BashPros**: [BashPros/javascript](https://github.com/BashPros/javascript)
-  - **Billabong**: [billabong/javascript](https://github.com/billabong/javascript)
-  - **Bisk**: [bisk](https://github.com/Bisk/)
-  - **Bonhomme**: [bonhommeparis/javascript](https://github.com/bonhommeparis/javascript)
-  - **Brainshark**: [brainshark/javascript](https://github.com/brainshark/javascript)
-  - **CaseNine**: [CaseNine/javascript](https://github.com/CaseNine/javascript)
-  - **Cerner**: [Cerner](https://github.com/cerner/)
-  - **Chartboost**: [ChartBoost/javascript-style-guide](https://github.com/ChartBoost/javascript-style-guide)
-  - **ComparaOnline**: [comparaonline/javascript](https://github.com/comparaonline/javascript-style-guide)
-  - **Compass Learning**: [compasslearning/javascript-style-guide](https://github.com/compasslearning/javascript-style-guide)
-  - **DailyMotion**: [dailymotion/javascript](https://github.com/dailymotion/javascript)
-  - **DoSomething**: [DoSomething/eslint-config](https://github.com/DoSomething/eslint-config)
-  - **Digitpaint** [digitpaint/javascript](https://github.com/digitpaint/javascript)
-  - **Drupal**: [www.drupal.org](https://www.drupal.org/project/drupal)
-  - **Ecosia**: [ecosia/javascript](https://github.com/ecosia/javascript)
-  - **Evernote**: [evernote/javascript-style-guide](https://github.com/evernote/javascript-style-guide)
-  - **Evolution Gaming**: [evolution-gaming/javascript](https://github.com/evolution-gaming/javascript)
-  - **EvozonJs**: [evozonjs/javascript](https://github.com/evozonjs/javascript)
-  - **ExactTarget**: [ExactTarget/javascript](https://github.com/ExactTarget/javascript)
-  - **Expensify** [Expensify/Style-Guide](https://github.com/Expensify/Style-Guide/blob/master/javascript.md)
-  - **Flexberry**: [Flexberry/javascript-style-guide](https://github.com/Flexberry/javascript-style-guide)
-  - **Gawker Media**: [gawkermedia](https://github.com/gawkermedia/)
-  - **General Electric**: [GeneralElectric/javascript](https://github.com/GeneralElectric/javascript)
-  - **Generation Tux**: [GenerationTux/javascript](https://github.com/generationtux/styleguide)
-  - **GoodData**: [gooddata/gdc-js-style](https://github.com/gooddata/gdc-js-style)
-  - **GreenChef**: [greenchef/javascript](https://github.com/greenchef/javascript)
-  - **Grooveshark**: [grooveshark/javascript](https://github.com/grooveshark/javascript)
-  - **Grupo-Abraxas**: [Grupo-Abraxas/javascript](https://github.com/Grupo-Abraxas/javascript)
-  - **Honey**: [honeyscience/javascript](https://github.com/honeyscience/javascript)
-  - **How About We**: [howaboutwe/javascript](https://github.com/howaboutwe/javascript-style-guide)
-  - **Huballin**: [huballin](https://github.com/huballin/)
-  - **HubSpot**: [HubSpot/javascript](https://github.com/HubSpot/javascript)
-  - **Hyper**: [hyperoslo/javascript-playbook](https://github.com/hyperoslo/javascript-playbook/blob/master/style.md)
-  - **InterCity Group**: [intercitygroup/javascript-style-guide](https://github.com/intercitygroup/javascript-style-guide)
-  - **Jam3**: [Jam3/Javascript-Code-Conventions](https://github.com/Jam3/Javascript-Code-Conventions)
-  - **JeopardyBot**: [kesne/jeopardy-bot](https://github.com/kesne/jeopardy-bot/blob/master/STYLEGUIDE.md)
-  - **JSSolutions**: [JSSolutions/javascript](https://github.com/JSSolutions/javascript)
-  - **Kaplan Komputing**: [kaplankomputing/javascript](https://github.com/kaplankomputing/javascript)
-  - **KickorStick**: [kickorstick](https://github.com/kickorstick/)
-  - **Kinetica Solutions**: [kinetica/javascript](https://github.com/kinetica/Javascript-style-guide)
-  - **LEINWAND**: [LEINWAND/javascript](https://github.com/LEINWAND/javascript)
-  - **Lonely Planet**: [lonelyplanet/javascript](https://github.com/lonelyplanet/javascript)
-  - **M2GEN**: [M2GEN/javascript](https://github.com/M2GEN/javascript)
-  - **Mighty Spring**: [mightyspring/javascript](https://github.com/mightyspring/javascript)
-  - **MinnPost**: [MinnPost/javascript](https://github.com/MinnPost/javascript)
-  - **MitocGroup**: [MitocGroup/javascript](https://github.com/MitocGroup/javascript)
-  - **ModCloth**: [modcloth/javascript](https://github.com/modcloth/javascript)
-  - **Money Advice Service**: [moneyadviceservice/javascript](https://github.com/moneyadviceservice/javascript)
-  - **Muber**: [muber](https://github.com/muber/)
-  - **National Geographic**: [natgeo](https://github.com/natgeo/)
-  - **Nimbl3**: [nimbl3/javascript](https://github.com/nimbl3/javascript)
-  - **Nulogy**: [nulogy/javascript](https://github.com/nulogy/javascript)
-  - **Orange Hill Development**: [orangehill/javascript](https://github.com/orangehill/javascript)
-  - **Orion Health**: [orionhealth/javascript](https://github.com/orionhealth/javascript)
-  - **OutBoxSoft**: [OutBoxSoft/javascript](https://github.com/OutBoxSoft/javascript)
-  - **Peerby**: [Peerby/javascript](https://github.com/Peerby/javascript)
-  - **Pier 1**: [Pier1/javascript](https://github.com/pier1/javascript)
-  - **Qotto**: [Qotto/javascript-style-guide](https://github.com/Qotto/javascript-style-guide)
-  - **Razorfish**: [razorfish/javascript-style-guide](https://github.com/razorfish/javascript-style-guide)
-  - **reddit**: [reddit/styleguide/javascript](https://github.com/reddit/styleguide/tree/master/javascript)
-  - **React**: [facebook.github.io/react/contributing/how-to-contribute.html#style-guide](https://facebook.github.io/react/contributing/how-to-contribute.html#style-guide)
-  - **REI**: [reidev/js-style-guide](https://github.com/rei/code-style-guides/)
-  - **Ripple**: [ripple/javascript-style-guide](https://github.com/ripple/javascript-style-guide)
-  - **Sainsbury’s Supermarkets**: [jsainsburyplc](https://github.com/jsainsburyplc)
-  - **SeekingAlpha**: [seekingalpha/javascript-style-guide](https://github.com/seekingalpha/javascript-style-guide)
-  - **Shutterfly**: [shutterfly/javascript](https://github.com/shutterfly/javascript)
-  - **Sourcetoad**: [sourcetoad/javascript](https://github.com/sourcetoad/javascript)
-  - **Springload**: [springload](https://github.com/springload/)
-  - **StratoDem Analytics**: [stratodem/javascript](https://github.com/stratodem/javascript)
-  - **SteelKiwi Development**: [steelkiwi/javascript](https://github.com/steelkiwi/javascript)
-  - **StudentSphere**: [studentsphere/javascript](https://github.com/studentsphere/guide-javascript)
-  - **SwoopApp**: [swoopapp/javascript](https://github.com/swoopapp/javascript)
-  - **SysGarage**: [sysgarage/javascript-style-guide](https://github.com/sysgarage/javascript-style-guide)
-  - **Syzygy Warsaw**: [syzygypl/javascript](https://github.com/syzygypl/javascript)
-  - **Target**: [target/javascript](https://github.com/target/javascript)
-  - **TheLadders**: [TheLadders/javascript](https://github.com/TheLadders/javascript)
-  - **The Nerdery**: [thenerdery/javascript-standards](https://github.com/thenerdery/javascript-standards)
-  - **T4R Technology**: [T4R-Technology/javascript](https://github.com/T4R-Technology/javascript)
-  - **VoxFeed**: [VoxFeed/javascript-style-guide](https://github.com/VoxFeed/javascript-style-guide)
-  - **WeBox Studio**: [weboxstudio/javascript](https://github.com/weboxstudio/javascript)
-  - **Weggo**: [Weggo/javascript](https://github.com/Weggo/javascript)
-  - **Zillow**: [zillow/javascript](https://github.com/zillow/javascript)
-  - **ZocDoc**: [ZocDoc/javascript](https://github.com/ZocDoc/javascript)
-
-**[⬆ back to top](#table-of-contents)**
-
-## Translation
-
-  This style guide is also available in other languages:
-
-  - ![br](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Brazil.png) **Brazilian Portuguese**: [armoucar/javascript-style-guide](https://github.com/armoucar/javascript-style-guide)
-  - ![bg](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Bulgaria.png) **Bulgarian**: [borislavvv/javascript](https://github.com/borislavvv/javascript)
-  - ![ca](https://raw.githubusercontent.com/fpmweb/javascript-style-guide/master/img/catala.png) **Catalan**: [fpmweb/javascript-style-guide](https://github.com/fpmweb/javascript-style-guide)
-  - ![cn](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/China.png) **Chinese (Simplified)**: [lin-123/javascript](https://github.com/lin-123/javascript)
-  - ![tw](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Taiwan.png) **Chinese (Traditional)**: [jigsawye/javascript](https://github.com/jigsawye/javascript)
-  - ![fr](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/France.png) **French**: [nmussy/javascript-style-guide](https://github.com/nmussy/javascript-style-guide)
-  - ![de](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Germany.png) **German**: [timofurrer/javascript-style-guide](https://github.com/timofurrer/javascript-style-guide)
-  - ![it](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Italy.png) **Italian**: [sinkswim/javascript-style-guide](https://github.com/sinkswim/javascript-style-guide)
-  - ![jp](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Japan.png) **Japanese**: [mitsuruog/javascript-style-guide](https://github.com/mitsuruog/javascript-style-guide)
-  - ![kr](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/South-Korea.png) **Korean**: [ParkSB/javascript-style-guide](https://github.com/ParkSB/javascript-style-guide)
-  - ![ru](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Russia.png) **Russian**: [leonidlebedev/javascript-airbnb](https://github.com/leonidlebedev/javascript-airbnb)
-  - ![es](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Spain.png) **Spanish**: [paolocarrasco/javascript-style-guide](https://github.com/paolocarrasco/javascript-style-guide)
-  - ![th](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Thailand.png) **Thai**: [lvarayut/javascript-style-guide](https://github.com/lvarayut/javascript-style-guide)
-  - ![tr](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Turkey.png) **Turkish**: [eraycetinay/javascript](https://github.com/eraycetinay/javascript)
-  - ![ua](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Ukraine.png) **Ukrainian**: [ivanzusko/javascript](https://github.com/ivanzusko/javascript)
-  - ![vn](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Vietnam.png) **Vietnam**: [hngiang/javascript-style-guide](https://github.com/hngiang/javascript-style-guide)
-
-## The JavaScript Style Guide Guide
-
-  - [Reference](https://github.com/airbnb/javascript/wiki/The-JavaScript-Style-Guide-Guide)
-
-## Chat With Us About JavaScript
-
-  - Find us on [gitter](https://gitter.im/airbnb/javascript).
-
-## Contributors
-
-  - [View Contributors](https://github.com/airbnb/javascript/graphs/contributors)
-
-## License
-
-(The MIT License)
-
-Copyright (c) 2012 Airbnb
-
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-'Software'), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
-
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-**[⬆ back to top](#table-of-contents)**
-
-## Amendments
-
-We encourage you to fork this guide and change the rules to fit your team’s style guide. Below, you may list some amendments to the style guide. This allows you to periodically update your style guide without having to deal with merge conflicts.
 
 # };

@@ -12,6 +12,8 @@ bad().then(function(response) {
     alert(message);
 });
 
+
+
 const better = function () {
     return new Promise((then) => {
         setTimeout(() => {
@@ -26,10 +28,10 @@ better().then((response) => {
     alert(message);
 });
 
+
+
 const best = function () {
-    return new Promise(then => {
-        setTimeout(() => then("Encompass Platform"), 300);
-    });
+    return new Promise(then => setTimeout(() => then("Encompass Platform"), 300));
 };
 
 best().then(response => alert(`Hello ${response}!`));

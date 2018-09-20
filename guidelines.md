@@ -48,6 +48,7 @@
     - `undefined`
     - `symbol`
 
+
     ```javascript
     const foo = 1;
     let bar = foo;
@@ -66,6 +67,7 @@
     - `array`
     - `function`
 
+
     ```javascript
     const foo = [1, 2];
     const bar = foo;
@@ -75,7 +77,7 @@
     console.log(foo[0], bar[0]); // => 9, 9
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[back to top](#table-of-contents)**
 
 ## References
 
@@ -126,7 +128,7 @@
     console.log(b); // ReferenceError
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[back to top](#table-of-contents)**
 
 ## Objects
 
@@ -300,7 +302,7 @@
     const { a, ...noA } = copy; // noA => { b: 2, c: 3 }
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[back to top](#table-of-contents)**
 
 ## Arrays
 
@@ -467,7 +469,7 @@
     ];
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[back to top](#table-of-contents)**
 
 ## Destructuring
 
@@ -536,7 +538,7 @@
     const { left, top } = processInput(input);
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[back to top](#table-of-contents)**
 
 ## Strings
 
@@ -619,7 +621,7 @@
     const foo = `my name is "${name}"`;
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[back to top](#table-of-contents)**
 
 ## Functions
 
@@ -901,7 +903,7 @@
     );
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[back to top](#table-of-contents)**
 
 ## Arrow Functions
 
@@ -1062,7 +1064,7 @@
     )
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[back to top](#table-of-contents)**
 
 ## Classes & Constructors
 
@@ -1229,7 +1231,7 @@
     }
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[back to top](#table-of-contents)**
 
 ## Modules
 
@@ -1388,7 +1390,7 @@
     import barCss from "bar.css";
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[back to top](#table-of-contents)**
 
 ## Iterators and Generators
 
@@ -1508,7 +1510,7 @@
     };
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[back to top](#table-of-contents)**
 
 ## Properties
 
@@ -1554,7 +1556,7 @@
     const binary = 2 ** 10;
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[back to top](#table-of-contents)**
 
 ## Variables
 
@@ -1788,7 +1790,7 @@
     // 'coords' is now the 'data' object without its 'type' property.
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[back to top](#table-of-contents)**
 
 ## Hoisting
 
@@ -1887,7 +1889,7 @@
 
   - For more information refer to [JavaScript Scoping & Hoisting](http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting/) by [Ben Cherry](http://www.adequatelygood.com/).
 
-**[⬆ back to top](#table-of-contents)**
+**[back to top](#table-of-contents)**
 
 ## Comparison Operators & Equality
 
@@ -2068,7 +2070,7 @@
     const bar = a + b / c * d;
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[back to top](#table-of-contents)**
 
 ## Blocks
 
@@ -2184,7 +2186,7 @@
     }
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[back to top](#table-of-contents)**
 
 ## Control Statements
 
@@ -2255,7 +2257,7 @@
     }
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[back to top](#table-of-contents)**
 
 ## Comments
 
@@ -2397,7 +2399,7 @@
     }
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[back to top](#table-of-contents)**
 
 ## Whitespace
 
@@ -2828,7 +2830,7 @@
     ```
     <!-- markdownlint-enable MD012 -->
 
-**[⬆ back to top](#table-of-contents)**
+**[back to top](#table-of-contents)**
 
 ## Commas
 
@@ -2946,7 +2948,7 @@
     );
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[back to top](#table-of-contents)**
 
 ## Semicolons
 
@@ -2998,7 +3000,7 @@
 
     [Read more](https://stackoverflow.com/questions/7365172/semicolon-before-self-invoking-function/7365214#7365214).
 
-**[⬆ back to top](#table-of-contents)**
+**[back to top](#table-of-contents)**
 
 ## Type Casting & Coercion
 
@@ -3087,7 +3089,7 @@
     const hasAge = !!age;
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[back to top](#table-of-contents)**
 
 ## Naming Conventions
 
@@ -3326,7 +3328,7 @@
     };
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[back to top](#table-of-contents)**
 
 ## Accessors
 
@@ -3395,7 +3397,7 @@
     }
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[back to top](#table-of-contents)**
 
 ## Events
 
@@ -3426,7 +3428,7 @@
     });
     ```
 
-  **[⬆ back to top](#table-of-contents)**
+  **[back to top](#table-of-contents)**
 
 ## jQuery
 
@@ -3498,14 +3500,14 @@
     $sidebar.find("ul").hide();
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[back to top](#table-of-contents)**
 
 ## ECMAScript 5 Compatibility
 
   <a name="es5-compat--kangax"></a><a name="26.1"></a>
   - [27.1](#es5-compat--kangax) Refer to [Kangax](https://twitter.com/kangax/)’s ES5 [compatibility table](https://kangax.github.io/es5-compat-table/).
 
-**[⬆ back to top](#table-of-contents)**
+**[back to top](#table-of-contents)**
 
 <a name="ecmascript-6-styles"></a>
 ## ECMAScript 6+ (ES 2015+) Styles
@@ -3533,7 +3535,7 @@
 
     > Why? [They are not finalized](https://tc39.github.io/process-document/), and they are subject to change or to be withdrawn entirely. We want to use JavaScript, and proposals are not JavaScript yet.
 
-**[⬆ back to top](#table-of-contents)**
+**[back to top](#table-of-contents)**
 
 ## Standard Library
 
@@ -3573,7 +3575,7 @@
     Number.isFinite(parseInt("2e3", 10)); // true
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[back to top](#table-of-contents)**
 
 ## Performance
 
@@ -3587,6 +3589,6 @@
   - [Are Javascript functions like `map()`, `reduce()`, and `filter()` optimized for traversing arrays?](https://www.quora.com/JavaScript-programming-language-Are-Javascript-functions-like-map-reduce-and-filter-already-optimized-for-traversing-array/answer/Quildreen-Motta)
   - Loading...
 
-**[⬆ back to top](#table-of-contents)**
+**[back to top](#table-of-contents)**
 
 # };

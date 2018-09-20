@@ -2,13 +2,6 @@
 
 *A mostly reasonable approach to JavaScript*
 
-Other Style Guides
-
-  - [ES5 (Deprecated)](https://github.com/airbnb/javascript/tree/es5-deprecated/es5)
-  - [React](react/)
-  - [CSS-in-JavaScript](css-in-javascript/)
-  - [CSS & Sass](https://github.com/airbnb/css)
-
 ## Table of Contents
 
   1. [Types](#types)
@@ -170,15 +163,15 @@ Other Style Guides
     // bad
     const obj = {
       id: 5,
-      name: 'San Francisco',
+      name: "Fort Collins",
     };
-    obj[getKey('enabled')] = true;
+    obj[getKey("enabled")] = true;
 
     // good
     const obj = {
       id: 5,
-      name: 'San Francisco',
-      [getKey('enabled')]: true,
+      name: "Fort Collins",
+      [getKey("enabled")]: true,
     };
     ```
 
@@ -211,16 +204,16 @@ Other Style Guides
     > Why? It is shorter to write and descriptive.
 
     ```javascript
-    const lukeSkywalker = 'Luke Skywalker';
+    const peterGriffin = "Peter Griffin";
 
     // bad
     const obj = {
-      lukeSkywalker: lukeSkywalker,
+      peterGriffin: peterGriffin,
     };
 
     // good
     const obj = {
-      lukeSkywalker,
+      peterGriffin,
     };
     ```
 
@@ -230,27 +223,27 @@ Other Style Guides
     > Why? It’s easier to tell which properties are using the shorthand.
 
     ```javascript
-    const anakinSkywalker = 'Anakin Skywalker';
-    const lukeSkywalker = 'Luke Skywalker';
+    const stewieGriffin = "Stewie Griffin";
+    const peterGriffin = "Peter Griffin";
 
     // bad
     const obj = {
-      episodeOne: 1,
-      twoJediWalkIntoACantina: 2,
-      lukeSkywalker,
-      episodeThree: 3,
-      mayTheFourth: 4,
-      anakinSkywalker,
+      peternormalActivity: 1,
+      runChrisRun: 2,
+      peterGriffin,
+      theFinerStrings: 3,
+      nannyGoats: 4,
+      stewieGriffin,
     };
 
     // good
     const obj = {
-      lukeSkywalker,
-      anakinSkywalker,
-      episodeOne: 1,
-      twoJediWalkIntoACantina: 2,
-      episodeThree: 3,
-      mayTheFourth: 4,
+      peterGriffin,
+      stewieGriffin,
+      peternormalActivity: 1,
+      runChrisRun: 2,
+      theFinerStrings: 3,
+      nannyGoats: 4,
     };
     ```
 
@@ -262,16 +255,16 @@ Other Style Guides
     ```javascript
     // bad
     const bad = {
-      'foo': 3,
-      'bar': 4,
-      'data-blah': 5,
+      "foo": 3,
+      "bar": 4,
+      "data-blah": 5,
     };
 
     // good
     const good = {
       foo: 3,
       bar: 4,
-      'data-blah': 5,
+      "data-blah": 5,
     };
     ```
 
@@ -290,7 +283,7 @@ Other Style Guides
     // best
     const has = Object.prototype.hasOwnProperty; // cache the lookup once, in module scope.
     /* or */
-    import has from 'has'; // https://www.npmjs.com/package/has
+    import has from "has"; // https://www.npmjs.com/package/has
     // ...
     console.log(has.call(object, key));
     ```
@@ -337,10 +330,10 @@ Other Style Guides
     const someStack = [];
 
     // bad
-    someStack[someStack.length] = 'abracadabra';
+    someStack[someStack.length] = "abracadabra";
 
     // good
-    someStack.push('abracadabra');
+    someStack.push("abracadabra");
     ```
 
   <a name="es6-array-spreads"></a><a name="4.3"></a>
@@ -365,7 +358,7 @@ Other Style Guides
   - [4.4](#arrays--from-iterable) To convert an iterable object to an array, use spreads `...` instead of [`Array.from`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from).
 
     ```javascript
-    const foo = document.querySelectorAll('.foo');
+    const foo = document.querySelectorAll(".foo");
 
     // good
     const nodes = Array.from(foo);
@@ -378,7 +371,7 @@ Other Style Guides
   - [4.5](#arrays--from-array-like) Use [`Array.from`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from) for converting an array-like object to an array.
 
     ```javascript
-    const arrLike = { 0: 'foo', 1: 'bar', 2: 'baz', length: 3 };
+    const arrLike = { 0: "foo", 1: "bar", 2: "baz", length: 3 };
 
     // bad
     const arr = Array.prototype.slice.call(arrLike);
@@ -427,8 +420,8 @@ Other Style Guides
     // bad
     inbox.filter((msg) => {
       const { subject, author } = msg;
-      if (subject === 'Mockingbird') {
-        return author === 'Harper Lee';
+      if (subject === "Influence People") {
+        return author === "Dale Carnegie";
       } else {
         return false;
       }
@@ -437,8 +430,8 @@ Other Style Guides
     // good
     inbox.filter((msg) => {
       const { subject, author } = msg;
-      if (subject === 'Mockingbird') {
-        return author === 'Harper Lee';
+      if (subject === "Influence People") {
+        return author === "Dale Carnegie";
       }
 
       return false;
@@ -534,7 +527,7 @@ Other Style Guides
     ```javascript
     // bad
     function processInput(input) {
-      // then a miracle occurs
+      // ...
       return [left, right, top, bottom];
     }
 
@@ -543,7 +536,7 @@ Other Style Guides
 
     // good
     function processInput(input) {
-      // then a miracle occurs
+      // ...
       return { left, right, top, bottom };
     }
 
@@ -556,17 +549,17 @@ Other Style Guides
 ## Strings
 
   <a name="strings--quotes"></a><a name="6.1"></a>
-  - [6.1](#strings--quotes) Use single quotes `''` for strings. eslint: [`quotes`](https://eslint.org/docs/rules/quotes.html)
+  - [6.1](#strings--quotes) Use double single quotes `""` for strings. eslint: [`quotes`](https://eslint.org/docs/rules/quotes.html)
 
     ```javascript
     // bad
-    const name = "Capt. Janeway";
+    const name = 'Capt. Janeway';
 
     // bad - template literals should contain interpolation or newlines
     const name = `Capt. Janeway`;
 
     // good
-    const name = 'Capt. Janeway';
+    const name = "Capt. Janeway";
     ```
 
   <a name="strings--line-length"></a><a name="6.2"></a>
@@ -577,17 +570,17 @@ Other Style Guides
     ```javascript
     // bad
     const errorMessage = 'This is a super long error that was thrown because \
-    of Batman. When you stop to think about how Batman had anything to do \
+    of The Hulk. When you stop to think about how The Hulk had anything to do \
     with this, you would get nowhere \
     fast.';
 
     // bad
     const errorMessage = 'This is a super long error that was thrown because ' +
-      'of Batman. When you stop to think about how Batman had anything to do ' +
+      'of The Hulk. When you stop to think about how The Hulk had anything to do ' +
       'with this, you would get nowhere fast.';
 
     // good
-    const errorMessage = 'This is a super long error that was thrown because of Batman. When you stop to think about how Batman had anything to do with this, you would get nowhere fast.';
+    const errorMessage = 'This is a super long error that was thrown because of The Hulk. When you stop to think about how The Hulk had anything to do with this, you would get nowhere fast.';
     ```
 
   <a name="es6-template-literals"></a><a name="6.4"></a>
@@ -598,12 +591,12 @@ Other Style Guides
     ```javascript
     // bad
     function sayHi(name) {
-      return 'How are you, ' + name + '?';
+      return "How are you, " + name + "?";
     }
 
     // bad
     function sayHi(name) {
-      return ['How are you, ', name, '?'].join();
+      return ["How are you, ", name, "?"].join();
     }
 
     // bad
@@ -627,11 +620,11 @@ Other Style Guides
 
     ```javascript
     // bad
-    const foo = '\'this\' \i\s \"quoted\"';
+    const foo = "\"this\" \i\s \'quoted\'";
 
     // good
-    const foo = '\'this\' is "quoted"';
-    const foo = `my name is '${name}'`;
+    const foo = "\"this\" is 'quoted'";
+    const foo = `my name is "${name}"`;
     ```
 
 **[⬆ back to top](#table-of-contents)**
@@ -641,7 +634,7 @@ Other Style Guides
   <a name="functions--declarations"></a><a name="7.1"></a>
   - [7.1](#functions--declarations) Use named function expressions instead of function declarations. eslint: [`func-style`](https://eslint.org/docs/rules/func-style)
 
-    > Why? Function declarations are hoisted, which means that it’s easy - too easy - to reference the function before it is defined in the file. This harms readability and maintainability. If you find that a function’s definition is large or complex enough that it is interfering with understanding the rest of the file, then perhaps it’s time to extract it to its own module! Don’t forget to explicitly name the expression, regardless of whether or not the name is inferred from the containing variable (which is often the case in modern browsers or when using compilers such as Babel). This eliminates any assumptions made about the Error’s call stack. ([Discussion](https://github.com/airbnb/javascript/issues/794))
+    > Why? Function declarations are hoisted, which means that it’s easy - too easy - to reference the function before it is defined in the file. This harms readability and maintainability. If you find that a function’s definition is large or complex enough that it is interfering with understanding the rest of the file, then perhaps it’s time to extract it to its own module! Don’t forget to explicitly name the expression, regardless of whether or not the name is inferred from the containing variable (which is often the case in modern browsers). This eliminates any assumptions made about the Error’s call stack.
 
     ```javascript
     // bad
@@ -669,12 +662,12 @@ Other Style Guides
     ```javascript
     // immediately-invoked function expression (IIFE)
     (function () {
-      console.log('Welcome to the Internet. Please follow me.');
+      console.log("Welcome to the Internet. Please follow me.");
     }());
     ```
 
   <a name="functions--in-blocks"></a><a name="7.3"></a>
-  - [7.3](#functions--in-blocks) Never declare a function in a non-function block (`if`, `while`, etc). Assign the function to a variable instead. Browsers will allow you to do it, but they all interpret it differently, which is bad news bears. eslint: [`no-loop-func`](https://eslint.org/docs/rules/no-loop-func.html)
+  - [7.3](#functions--in-blocks) Never declare a function in a non-function block (`if`, `while`, etc). Assign the function to a variable instead. Browsers will allow you to do it, but they all interpret it differently, which is bad news. eslint: [`no-loop-func`](https://eslint.org/docs/rules/no-loop-func.html)
 
   <a name="functions--note-on-blocks"></a><a name="7.4"></a>
   - [7.4](#functions--note-on-blocks) **Note:** ECMA-262 defines a `block` as a list of statements. A function declaration is not a statement.
@@ -683,7 +676,7 @@ Other Style Guides
     // bad
     if (currentUser) {
       function test() {
-        console.log('Nope.');
+        console.log("Nope.");
       }
     }
 
@@ -691,7 +684,7 @@ Other Style Guides
     let test;
     if (currentUser) {
       test = () => {
-        console.log('Yup.');
+        console.log("Yup.");
       };
     }
     ```
@@ -795,10 +788,10 @@ Other Style Guides
 
     ```javascript
     // bad
-    var add = new Function('a', 'b', 'return a + b');
+    var add = new Function("a", "b", "return a + b");
 
     // still bad
-    var subtract = Function('a', 'b', 'return a - b');
+    var subtract = Function("a", "b", "return a - b");
     ```
 
   <a name="functions--signature-spacing"></a><a name="7.11"></a>
@@ -993,14 +986,14 @@ Other Style Guides
 
     ```javascript
     // bad
-    ['get', 'post', 'put'].map(httpMethod => Object.prototype.hasOwnProperty.call(
+    ["get", "post", "put"].map(httpMethod => Object.prototype.hasOwnProperty.call(
         httpMagicObjectWithAVeryLongName,
         httpMethod,
       )
     );
 
     // good
-    ['get', 'post', 'put'].map(httpMethod => (
+    ["get", "post", "put"].map(httpMethod => (
       Object.prototype.hasOwnProperty.call(
         httpMagicObjectWithAVeryLongName,
         httpMethod,
@@ -1117,11 +1110,14 @@ Other Style Guides
 
     ```javascript
     // bad
-    const inherits = require('inherits');
+    const inherits = require("inherits");
+
     function PeekableQueue(contents) {
       Queue.apply(this, contents);
     }
+
     inherits(PeekableQueue, Queue);
+
     PeekableQueue.prototype.peek = function () {
       return this.queue[0];
     };
@@ -1139,21 +1135,21 @@ Other Style Guides
 
     ```javascript
     // bad
-    Jedi.prototype.jump = function () {
+    Hulk.prototype.jump = function () {
       this.jumping = true;
       return true;
     };
 
-    Jedi.prototype.setHeight = function (height) {
+    Hulk.prototype.setHeight = function (height) {
       this.height = height;
     };
 
-    const luke = new Jedi();
-    luke.jump(); // => true
-    luke.setHeight(20); // => undefined
+    const banner = new Hulk();
+    banner.jump(); // => true
+    banner.setHeight(20); // => undefined
 
     // good
-    class Jedi {
+    class Hulk {
       jump() {
         this.jumping = true;
         return this;
@@ -1165,19 +1161,18 @@ Other Style Guides
       }
     }
 
-    const luke = new Jedi();
+    const banner = new Hulk();
 
-    luke.jump()
-      .setHeight(20);
+    banner.jump().setHeight(20);
     ```
 
   <a name="constructors--tostring"></a><a name="9.4"></a>
   - [9.4](#constructors--tostring) It’s okay to write a custom `toString()` method, just make sure it works successfully and causes no side effects.
 
     ```javascript
-    class Jedi {
+    class Hulk {
       constructor(options = {}) {
-        this.name = options.name || 'no name';
+        this.name = options.name || "no name";
       }
 
       getName() {
@@ -1185,7 +1180,7 @@ Other Style Guides
       }
 
       toString() {
-        return `Jedi - ${this.getName()}`;
+        return `Hulk - ${this.getName()}`;
       }
     }
     ```
@@ -1195,7 +1190,7 @@ Other Style Guides
 
     ```javascript
     // bad
-    class Jedi {
+    class Hulk {
       constructor() {}
 
       getName() {
@@ -1204,17 +1199,17 @@ Other Style Guides
     }
 
     // bad
-    class Rey extends Jedi {
+    class Banner extends Hulk {
       constructor(...args) {
         super(...args);
       }
     }
 
     // good
-    class Rey extends Jedi {
+    class Banner extends Hulk {
       constructor(...args) {
         super(...args);
-        this.name = 'Rey';
+        this.name = 'Banner';
       }
     }
     ```
@@ -1253,15 +1248,15 @@ Other Style Guides
 
     ```javascript
     // bad
-    const AirbnbStyleGuide = require('./AirbnbStyleGuide');
-    module.exports = AirbnbStyleGuide.es6;
+    const EncompassStyleGuide = require("./EncompassStyleGuide");
+    module.exports = EncompassStyleGuide.es6;
 
     // ok
-    import AirbnbStyleGuide from './AirbnbStyleGuide';
-    export default AirbnbStyleGuide.es6;
+    import EncompassStyleGuide from "./EncompassStyleGuide";
+    export default EncompassStyleGuide.es6;
 
     // best
-    import { es6 } from './AirbnbStyleGuide';
+    import { es6 } from "./EncompassStyleGuide";
     export default es6;
     ```
 
@@ -1272,10 +1267,10 @@ Other Style Guides
 
     ```javascript
     // bad
-    import * as AirbnbStyleGuide from './AirbnbStyleGuide';
+    import * as EncompassStyleGuide from "./EncompassStyleGuide";
 
     // good
-    import AirbnbStyleGuide from './AirbnbStyleGuide';
+    import EncompassStyleGuide from "./EncompassStyleGuide";
     ```
 
   <a name="modules--no-export-from-import"></a><a name="10.3"></a>
@@ -1286,11 +1281,11 @@ Other Style Guides
     ```javascript
     // bad
     // filename es6.js
-    export { es6 as default } from './AirbnbStyleGuide';
+    export { es6 as default } from "./EncompassStyleGuide";
 
     // good
     // filename es6.js
-    import { es6 } from './AirbnbStyleGuide';
+    import { es6 } from "./EncompassStyleGuide";
     export default es6;
     ```
 
@@ -1301,18 +1296,18 @@ Other Style Guides
 
     ```javascript
     // bad
-    import foo from 'foo';
+    import foo from "foo";
     // … some other imports … //
-    import { named1, named2 } from 'foo';
+    import { named1, named2 } from "foo";
 
     // good
-    import foo, { named1, named2 } from 'foo';
+    import foo, { named1, named2 } from "foo";
 
     // good
     import foo, {
       named1,
       named2,
-    } from 'foo';
+    } from "foo";
     ```
 
   <a name="modules--no-mutable-exports"></a>
@@ -1350,14 +1345,14 @@ Other Style Guides
 
     ```javascript
     // bad
-    import foo from 'foo';
+    import foo from "foo";
     foo.init();
 
-    import bar from 'bar';
+    import bar from "bar";
 
     // good
-    import foo from 'foo';
-    import bar from 'bar';
+    import foo from "foo";
+    import bar from "bar";
 
     foo.init();
     ```
@@ -1369,7 +1364,7 @@ Other Style Guides
 
     ```javascript
     // bad
-    import {longNameA, longNameB, longNameC, longNameD, longNameE} from 'path';
+    import {longNameA, longNameB, longNameC, longNameD, longNameE} from "path";
 
     // good
     import {
@@ -1378,7 +1373,7 @@ Other Style Guides
       longNameC,
       longNameD,
       longNameE,
-    } from 'path';
+    } from "path";
     ```
 
   <a name="modules--no-webpack-loader-syntax"></a>
@@ -1388,12 +1383,12 @@ Other Style Guides
 
     ```javascript
     // bad
-    import fooSass from 'css!sass!foo.scss';
-    import barCss from 'style!css!bar.css';
+    import fooSass from "css!sass!foo.scss";
+    import barCss from "style!css!bar.css";
 
     // good
-    import fooSass from 'foo.scss';
-    import barCss from 'bar.css';
+    import fooSass from "foo.scss";
+    import barCss from "bar.css";
     ```
 
 **[⬆ back to top](#table-of-contents)**

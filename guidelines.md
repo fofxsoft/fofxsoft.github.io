@@ -1,6 +1,5 @@
-# Encompass JavaScript Style Guide() {
+# Encompass JavaScript Style Guide
 
-*A mostly reasonable approach to JavaScript*
 
 ## Table of Contents
 

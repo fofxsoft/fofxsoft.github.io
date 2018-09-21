@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="233" height="20">
+<svg xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="233" height="20">
     <style>a #llink:hover{fill:url(#b);stroke:#ccc}a #rlink:hover{fill:#4183c4}</style>
     <linearGradient id="a" x2="0" y2="100%">
         <stop offset="0" stop-color="#fcfcfc" stop-opacity="0"/>
@@ -14,12 +15,11 @@
         <path stroke="#fafafa" d="M133 7.5h.5v5h-.5z"/>
         <path d="M133.5 6.5l-3 3v1l3 3" stroke="d5d5d5" fill="#fafafa"/>
     </g>
-    <image xlink:href="https://ficoforums.myfico.com/t5/image/serverpage/image-id/33675i85072060A7E9ED9F" x="3" y="4" height="12px" width="12px"/>
     <g fill="#333" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-weight="700" font-size="110">
-        <text x="700" y="150" fill="#fff" transform="scale(.1)" textLength="1050">Garden Club Member</text>
-        <text x="700" y="140" transform="scale(.1)" textLength="1050">Garden Club Member</text>
-        <text x="1825" y="150" fill="#fff" transform="scale(.1)" textLength="840">Since 5/26/2018</text>
-        <text id="rlink" x="1825" y="140" transform="scale(.1)" textLength="840">Since 5/26/2018</text>
+        <text x="635" y="150" fill="#fff" transform="scale(.1)" textLength="1170">Garden Club Member</text>
+        <text x="635" y="140" transform="scale(.1)" textLength="1170">Garden Club Member</text>
+        <text x="1825" y="150" fill="#fff" transform="scale(.1)" textLength="910">Since 5/26/2018</text>
+        <text id="rlink" x="1825" y="140" transform="scale(.1)" textLength="910">Since 5/26/2018</text>
     </g>
     <rect id="llink" stroke="#d5d5d5" fill="url(#a)" x=".5" y=".5" width="127" height="19" rx="2"/>
 </svg>

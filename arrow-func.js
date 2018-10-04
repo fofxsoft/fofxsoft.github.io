@@ -1,4 +1,4 @@
-function bad() {
+var bad = function () {
     return new Promise(function(then) {
         setTimeout(function () {
             then('Encompass Platform');
@@ -9,29 +9,25 @@ function bad() {
 bad().then(function(response) {
     var message = 'Hello ' + response + '!';
 
-    alert(message);
+    document.write(message);
 });
 
 
-
-const better = function () {
+function better() {
     return new Promise((then) => {
         setTimeout(() => {
             then("Encompass Platform");
         }, 300);
     });
-};
+}
 
 better().then((response) => {
-    let message = "Hello " + response + "!";
-
-    alert(message);
+    document.write(`Hello ${response}!`);
 });
 
 
-
-const best = function () {
+function best() {
     return new Promise(then => setTimeout(() => then("Encompass Platform"), 300));
-};
+}
 
-best().then(response => alert(`Hello ${response}!`));
+best().then(response => document.write(`Hello ${response}!`));

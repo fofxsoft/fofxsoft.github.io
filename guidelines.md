@@ -47,6 +47,7 @@
     - `symbol`
 
 
+
     ```javascript
     const foo = 1;
     let bar = foo;
@@ -64,6 +65,7 @@
     - `object`
     - `array`
     - `function`
+
 
 
     ```javascript

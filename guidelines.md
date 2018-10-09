@@ -46,8 +46,7 @@
     - `undefined`
     - `symbol`
 
-
-
+   
     ```javascript
     const foo = 1;
     let bar = foo;
@@ -66,8 +65,7 @@
     - `array`
     - `function`
 
-
-
+   
     ```javascript
     const foo = [1, 2];
     const bar = foo;

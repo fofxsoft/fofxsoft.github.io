@@ -44,9 +44,8 @@
     - `boolean`
     - `null`
     - `undefined`
-    - `symbol`
-    <br>
-    <br>
+    - `symbol`  
+  
     ```javascript
     const foo = 1;
     let bar = foo;
@@ -63,9 +62,8 @@
 
     - `object`
     - `array`
-    - `function`
-    <br>
-    <br>
+    - `function`  
+  
     ```javascript
     const foo = [1, 2];
     const bar = foo;

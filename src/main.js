@@ -7,6 +7,7 @@ import {
     MdButton,
     MdContent,
     MdToolbar,
+    MdCard,
 } from "vue-material/dist/components";
 
 import app from "./app.vue";
@@ -23,6 +24,7 @@ Vue.use(MdIcon);
 Vue.use(MdButton);
 Vue.use(MdContent);
 Vue.use(MdToolbar);
+Vue.use(MdCard);
 
 Vue.config.productionTip = false;
 

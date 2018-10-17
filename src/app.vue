@@ -9,11 +9,7 @@
 
                     <div class="md-toolbar-section-end">
                         <md-button to="/projects">Projects</md-button>
-                            <md-button to="/docs">Documentation</md-button>
-
-                        <md-button class="md-icon-button">
-                            <md-icon>more_vert</md-icon>
-                        </md-button>
+                        <md-button to="/docs">Documentation</md-button>
                     </div>
                 </div>
             </md-app-toolbar>

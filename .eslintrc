@@ -5,6 +5,9 @@
         "jquery": true,
         "node": true
     },
+    "plugins": [
+        "vue"
+    ],
     "parser": "babel-eslint",
     "parserOptions": {
         "ecmaVersion": 2018,

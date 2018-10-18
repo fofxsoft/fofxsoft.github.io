@@ -6,7 +6,7 @@
                     <table cellpadding="0" cellspacing="0" border="0">
                         <tr>
                             <td class="img">
-                                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNTEyIj48cGF0aCBmaWxsPSIjZmZmZmZmIiBkPSJNMjc4LjkgNTExLjVsLTYxLTE3LjdjLTYuNC0xLjgtMTAtOC41LTguMi0xNC45TDM0Ni4yIDguN2MxLjgtNi40IDguNS0xMCAxNC45LTguMmw2MSAxNy43YzYuNCAxLjggMTAgOC41IDguMiAxNC45TDI5My44IDUwMy4zYy0xLjkgNi40LTguNSAxMC4xLTE0LjkgOC4yem0tMTE0LTExMi4ybDQzLjUtNDYuNGM0LjYtNC45IDQuMy0xMi43LS44LTE3LjJMMTE3IDI1Nmw5MC42LTc5LjdjNS4xLTQuNSA1LjUtMTIuMy44LTE3LjJsLTQzLjUtNDYuNGMtNC41LTQuOC0xMi4xLTUuMS0xNy0uNUwzLjggMjQ3LjJjLTUuMSA0LjctNS4xIDEyLjggMCAxNy41bDE0NC4xIDEzNS4xYzQuOSA0LjYgMTIuNSA0LjQgMTctLjV6bTMyNy4yLjZsMTQ0LjEtMTM1LjFjNS4xLTQuNyA1LjEtMTIuOCAwLTE3LjVMNDkyLjEgMTEyLjFjLTQuOC00LjUtMTIuNC00LjMtMTcgLjVMNDMxLjYgMTU5Yy00LjYgNC45LTQuMyAxMi43LjggMTcuMkw1MjMgMjU2bC05MC42IDc5LjdjLTUuMSA0LjUtNS41IDEyLjMtLjggMTcuMmw0My41IDQ2LjRjNC41IDQuOSAxMi4xIDUuMSAxNyAuNnoiLz48L3N2Zz4=">
+                                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNTEyIj48cGF0aCBmaWxsPSIjZmZmZmZmIiBkPSJNMjc4LjkgNTExLjVsLTYxLTE3LjdjLTYuNC0xLjgtMTAtOC41LTguMi0xNC45TDM0Ni4yIDguN2MxLjgtNi40IDguNS0xMCAxNC45LTguMmw2MSAxNy43YzYuNCAxLjggMTAgOC41IDguMiAxNC45TDI5My44IDUwMy4zYy0xLjkgNi40LTguNSAxMC4xLTE0LjkgOC4yem0tMTE0LTExMi4ybDQzLjUtNDYuNGM0LjYtNC45IDQuMy0xMi43LS44LTE3LjJMMTE3IDI1Nmw5MC42LTc5LjdjNS4xLTQuNSA1LjUtMTIuMy44LTE3LjJsLTQzLjUtNDYuNGMtNC41LTQuOC0xMi4xLTUuMS0xNy0uNUwzLjggMjQ3LjJjLTUuMSA0LjctNS4xIDEyLjggMCAxNy41bDE0NC4xIDEzNS4xYzQuOSA0LjYgMTIuNSA0LjQgMTctLjV6bTMyNy4yLjZsMTQ0LjEtMTM1LjFjNS4xLTQuNyA1LjEtMTIuOCAwLTE3LjVMNDkyLjEgMTEyLjFjLTQuOC00LjUtMTIuNC00LjMtMTcgLjVMNDMxLjYgMTU5Yy00LjYgNC45LTQuMyAxMi43LjggMTcuMkw1MjMgMjU2bC05MC42IDc5LjdjLTUuMSA0LjUtNS41IDEyLjMtLjggMTcuMmw0My41IDQ2LjRjNC41IDQuOSAxMi4xIDUuMSAxNyAuNnoiLz48L3N2Zz4=" />
                             </td>
                             <td class="title">
                                 Code Editor
@@ -27,8 +27,8 @@
             </md-card-area>
 
             <md-card-actions>
-                <md-button href="https://github.com/fofxsoft/code" target="_blank">Repository</md-button>
-                <md-button href="https://fofxsoft.github.io/code/" target="_blank">Demo</md-button>
+                <md-button href="https://github.com/fofxsoft/code-editor" target="_blank">Repository</md-button>
+                <md-button href="https://fofxsoft.github.io/code-editor/" target="_blank">Demo</md-button>
             </md-card-actions>
         </md-card>
 
@@ -38,7 +38,7 @@
                     <table cellpadding="0" cellspacing="0" border="0">
                         <tr>
                             <td class="img">
-                                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNTEyIj48cGF0aCBmaWxsPSIjZmZmZmZmIiBkPSJNMjc4LjkgNTExLjVsLTYxLTE3LjdjLTYuNC0xLjgtMTAtOC41LTguMi0xNC45TDM0Ni4yIDguN2MxLjgtNi40IDguNS0xMCAxNC45LTguMmw2MSAxNy43YzYuNCAxLjggMTAgOC41IDguMiAxNC45TDI5My44IDUwMy4zYy0xLjkgNi40LTguNSAxMC4xLTE0LjkgOC4yem0tMTE0LTExMi4ybDQzLjUtNDYuNGM0LjYtNC45IDQuMy0xMi43LS44LTE3LjJMMTE3IDI1Nmw5MC42LTc5LjdjNS4xLTQuNSA1LjUtMTIuMy44LTE3LjJsLTQzLjUtNDYuNGMtNC41LTQuOC0xMi4xLTUuMS0xNy0uNUwzLjggMjQ3LjJjLTUuMSA0LjctNS4xIDEyLjggMCAxNy41bDE0NC4xIDEzNS4xYzQuOSA0LjYgMTIuNSA0LjQgMTctLjV6bTMyNy4yLjZsMTQ0LjEtMTM1LjFjNS4xLTQuNyA1LjEtMTIuOCAwLTE3LjVMNDkyLjEgMTEyLjFjLTQuOC00LjUtMTIuNC00LjMtMTcgLjVMNDMxLjYgMTU5Yy00LjYgNC45LTQuMyAxMi43LjggMTcuMkw1MjMgMjU2bC05MC42IDc5LjdjLTUuMSA0LjUtNS41IDEyLjMtLjggMTcuMmw0My41IDQ2LjRjNC41IDQuOSAxMi4xIDUuMSAxNyAuNnoiLz48L3N2Zz4=">
+                                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNTEyIj48cGF0aCBmaWxsPSIjZmZmZmZmIiBkPSJNMjc4LjkgNTExLjVsLTYxLTE3LjdjLTYuNC0xLjgtMTAtOC41LTguMi0xNC45TDM0Ni4yIDguN2MxLjgtNi40IDguNS0xMCAxNC45LTguMmw2MSAxNy43YzYuNCAxLjggMTAgOC41IDguMiAxNC45TDI5My44IDUwMy4zYy0xLjkgNi40LTguNSAxMC4xLTE0LjkgOC4yem0tMTE0LTExMi4ybDQzLjUtNDYuNGM0LjYtNC45IDQuMy0xMi43LS44LTE3LjJMMTE3IDI1Nmw5MC42LTc5LjdjNS4xLTQuNSA1LjUtMTIuMy44LTE3LjJsLTQzLjUtNDYuNGMtNC41LTQuOC0xMi4xLTUuMS0xNy0uNUwzLjggMjQ3LjJjLTUuMSA0LjctNS4xIDEyLjggMCAxNy41bDE0NC4xIDEzNS4xYzQuOSA0LjYgMTIuNSA0LjQgMTctLjV6bTMyNy4yLjZsMTQ0LjEtMTM1LjFjNS4xLTQuNyA1LjEtMTIuOCAwLTE3LjVMNDkyLjEgMTEyLjFjLTQuOC00LjUtMTIuNC00LjMtMTcgLjVMNDMxLjYgMTU5Yy00LjYgNC45LTQuMyAxMi43LjggMTcuMkw1MjMgMjU2bC05MC42IDc5LjdjLTUuMSA0LjUtNS41IDEyLjMtLjggMTcuMmw0My41IDQ2LjRjNC41IDQuOSAxMi4xIDUuMSAxNyAuNnoiLz48L3N2Zz4=" />
                             </td>
                             <td class="title">
                                 Code Docs
@@ -59,19 +59,19 @@
             </md-card-area>
 
             <md-card-actions>
-                <md-button href="https://github.com/fofxsoft/docs" target="_blank">Repository</md-button>
-                <md-button href="https://fofxsoft.github.io/docs/" target="_blank">Demo</md-button>
+                <md-button href="https://github.com/fofxsoft/code-docs" target="_blank">Repository</md-button>
+                <md-button href="https://fofxsoft.github.io/code-docs/" target="_blank">Demo</md-button>
             </md-card-actions>
         </md-card>
 
         <md-card>
             <md-card-area>
-                <md-card-media class="encompass">
-                    <img src="https://fofxsoft.github.io/encompass/static/images/header-logo.svg">
+                <md-card-media class="suma">
+                    <img src="../assets/suma.svg" />
                 </md-card-media>
 
                 <md-card-header>
-                    <div class="md-title">Encompass</div>
+                    <div class="md-title">Suma</div>
                     <div class="md-subhead">Design Idea</div>
                 </md-card-header>
 
@@ -81,7 +81,8 @@
             </md-card-area>
 
             <md-card-actions>
-                <md-button href="https://fofxsoft.github.io/encompass/" target="_blank">Visit</md-button>
+                <md-button href="https://github.com/fofxsoft/suma" target="_blank">Repository</md-button>
+                <md-button href="https://fofxsoft.github.io/suma/" target="_blank">Demo</md-button>
             </md-card-actions>
         </md-card>
     </section>
@@ -173,8 +174,8 @@
         font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     }
 
-    .encompass {
-        background-color: #104fa8;
+    .suma {
+        background-color: #e25712;
         text-align: center;
         display: flex;
         align-items: center;
@@ -182,7 +183,7 @@
         flex-direction: column;
     }
 
-    .encompass img {
-        height: 35px !important;
+    .suma img {
+        height: 75px !important;
     }
 </style>

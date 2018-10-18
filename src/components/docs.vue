@@ -3,7 +3,7 @@
         <md-card>
             <md-card-area>
                 <md-card-media class="block-one">
-                    <img src="https://fofxsoft.github.io/assets/logo.svg">
+                    <img src="https://fofxsoft.github.io/assets/logo.svg" />
                 </md-card-media>
 
                 <md-card-header>

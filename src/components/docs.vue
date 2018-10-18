@@ -18,7 +18,7 @@
             </md-card-area>
 
             <md-card-actions>
-                <md-button href="https://fofxsoft.github.io/blockone/" target="_blank">Visit</md-button>
+                <md-button href="https://fofxsoft.github.io/blockone/docs/getting-started" target="_blank">Visit</md-button>
             </md-card-actions>
         </md-card>
     </section>

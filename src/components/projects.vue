@@ -2,11 +2,11 @@
     <section id="main">
         <md-card>
             <md-card-area>
-                <md-card-media class="code">
+                <md-card-media class="code-editor">
                     <table cellpadding="0" cellspacing="0" border="0">
                         <tr>
                             <td class="img">
-                                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNTEyIj48cGF0aCBmaWxsPSIjZmZmZmZmIiBkPSJNMjc4LjkgNTExLjVsLTYxLTE3LjdjLTYuNC0xLjgtMTAtOC41LTguMi0xNC45TDM0Ni4yIDguN2MxLjgtNi40IDguNS0xMCAxNC45LTguMmw2MSAxNy43YzYuNCAxLjggMTAgOC41IDguMiAxNC45TDI5My44IDUwMy4zYy0xLjkgNi40LTguNSAxMC4xLTE0LjkgOC4yem0tMTE0LTExMi4ybDQzLjUtNDYuNGM0LjYtNC45IDQuMy0xMi43LS44LTE3LjJMMTE3IDI1Nmw5MC42LTc5LjdjNS4xLTQuNSA1LjUtMTIuMy44LTE3LjJsLTQzLjUtNDYuNGMtNC41LTQuOC0xMi4xLTUuMS0xNy0uNUwzLjggMjQ3LjJjLTUuMSA0LjctNS4xIDEyLjggMCAxNy41bDE0NC4xIDEzNS4xYzQuOSA0LjYgMTIuNSA0LjQgMTctLjV6bTMyNy4yLjZsMTQ0LjEtMTM1LjFjNS4xLTQuNyA1LjEtMTIuOCAwLTE3LjVMNDkyLjEgMTEyLjFjLTQuOC00LjUtMTIuNC00LjMtMTcgLjVMNDMxLjYgMTU5Yy00LjYgNC45LTQuMyAxMi43LjggMTcuMkw1MjMgMjU2bC05MC42IDc5LjdjLTUuMSA0LjUtNS41IDEyLjMtLjggMTcuMmw0My41IDQ2LjRjNC41IDQuOSAxMi4xIDUuMSAxNyAuNnoiLz48L3N2Zz4=" />
+                                <img src="../assets/code.svg" />
                             </td>
                             <td class="title">
                                 Code Editor
@@ -34,11 +34,11 @@
 
         <md-card>
             <md-card-area>
-                <md-card-media class="docs">
+                <md-card-media class="code-docs">
                     <table cellpadding="0" cellspacing="0" border="0">
                         <tr>
                             <td class="img">
-                                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNTEyIj48cGF0aCBmaWxsPSIjZmZmZmZmIiBkPSJNMjc4LjkgNTExLjVsLTYxLTE3LjdjLTYuNC0xLjgtMTAtOC41LTguMi0xNC45TDM0Ni4yIDguN2MxLjgtNi40IDguNS0xMCAxNC45LTguMmw2MSAxNy43YzYuNCAxLjggMTAgOC41IDguMiAxNC45TDI5My44IDUwMy4zYy0xLjkgNi40LTguNSAxMC4xLTE0LjkgOC4yem0tMTE0LTExMi4ybDQzLjUtNDYuNGM0LjYtNC45IDQuMy0xMi43LS44LTE3LjJMMTE3IDI1Nmw5MC42LTc5LjdjNS4xLTQuNSA1LjUtMTIuMy44LTE3LjJsLTQzLjUtNDYuNGMtNC41LTQuOC0xMi4xLTUuMS0xNy0uNUwzLjggMjQ3LjJjLTUuMSA0LjctNS4xIDEyLjggMCAxNy41bDE0NC4xIDEzNS4xYzQuOSA0LjYgMTIuNSA0LjQgMTctLjV6bTMyNy4yLjZsMTQ0LjEtMTM1LjFjNS4xLTQuNyA1LjEtMTIuOCAwLTE3LjVMNDkyLjEgMTEyLjFjLTQuOC00LjUtMTIuNC00LjMtMTcgLjVMNDMxLjYgMTU5Yy00LjYgNC45LTQuMyAxMi43LjggMTcuMkw1MjMgMjU2bC05MC42IDc5LjdjLTUuMSA0LjUtNS41IDEyLjMtLjggMTcuMmw0My41IDQ2LjRjNC41IDQuOSAxMi4xIDUuMSAxNyAuNnoiLz48L3N2Zz4=" />
+                                <img src="../assets/code.svg" />
                             </td>
                             <td class="title">
                                 Code Docs
@@ -89,101 +89,101 @@
 </template>
 
 <script>
-    export default {
-        name: "projects",
-    }
+export default {
+    name: "projects",
+};
 </script>
 
 <style scoped>
-    #main {
-        padding: 20px 7px;
-    }
+#main {
+    padding: 20px 7px;
+}
 
-    .md-card {
-        width: 320px;
-        margin: 4px;
-        display: inline-block;
-        vertical-align: top;
-    }
+.md-card {
+    width: 320px;
+    margin: 4px;
+    display: inline-block;
+    vertical-align: top;
+}
 
-    .md-card-media {
-        height: 180px;
-    }
+.md-card-media {
+    height: 180px;
+}
 
-    .code {
-        background-color: #68217a;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    }
+.code-editor {
+    background-color: #68217a;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
 
-    .code table {
-        margin-bottom: 15px;
-    }
+.code-editor table {
+    margin-bottom: 15px;
+}
 
-    .code .img {
-        width: 60px;
-        padding-right: 10px;
-    }
+.code-editor .img {
+    width: 60px;
+    padding-right: 10px;
+}
 
-    .code .img img {
-        height: 50px;
-        display: inline-block;
-    }
+.code-editor .img img {
+    height: 50px;
+    display: inline-block;
+}
 
-    .code .title {
-        white-space: nowrap;
-        font-size: 28pt;
-        color: #fff;
-        vertical-align: middle;
-        font-weight: 450;
-    }
+.code-editor .title {
+    white-space: nowrap;
+    font-size: 28pt;
+    color: #fff;
+    vertical-align: middle;
+    font-weight: 450;
+}
 
-    .docs {
-        background-color: #007acc;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    }
+.code-docs {
+    background-color: #007acc;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 
-    .docs table {
-        margin-bottom: 15px;
-    }
+.code-docs table {
+    margin-bottom: 15px;
+}
 
-    .docs .img {
-        width: 60px;
-        padding-right: 10px;
-    }
+.code-docs .img {
+    width: 60px;
+    padding-right: 10px;
+}
 
-    .docs .img img {
-        height: 50px;
-        display: inline-block;
-    }
+.code-docs .img img {
+    height: 50px;
+    display: inline-block;
+}
 
-    .docs .title {
-        white-space: nowrap;
-        font-size: 28pt;
-        color: #fff;
-        vertical-align: middle;
-        font-weight: 450;
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    }
+.code-docs .title {
+    white-space: nowrap;
+    font-size: 28pt;
+    color: #fff;
+    vertical-align: middle;
+    font-weight: 450;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
 
-    .suma {
-        background-color: #e25712;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    }
+.suma {
+    background-color: #e25712;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 
-    .suma img {
-        height: 75px !important;
-    }
+.suma img {
+    height: 75px !important;
+}
 </style>

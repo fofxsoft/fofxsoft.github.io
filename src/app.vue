@@ -21,65 +21,65 @@
 </template>
 
 <script>
-    export default {
-        name: "app",
-    }
+export default {
+    name: "app",
+};
 </script>
 
 <style>
-    html,
-    body {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-    }
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
 
-    * {
-        box-sizing: border-box;
-    }
+* {
+    box-sizing: border-box;
+}
 
-    #app {
-        width: 100%;
-        height: 100%;
-    }
+#app {
+    width: 100%;
+    height: 100%;
+}
 
-    #app .md-app {
-        height: 100%;
-        overflow: hidden;
-    }
+#app .md-app {
+    height: 100%;
+    overflow: hidden;
+}
 
-    #app .md-app-container {
-        height: 100%;
-        overflow: hidden;
-    }
+#app .md-app-container {
+    height: 100%;
+    overflow: hidden;
+}
 
-    #app .md-app-content {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-    }
+#app .md-app-content {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
 
-    #app .md-app-scroller {
-        height: 100%;
-        overflow: auto;
-    }
+#app .md-app-scroller {
+    height: 100%;
+    overflow: auto;
+}
 
-    #app .md-content {
-        height: 100%;
-        border: 0 none;
-    }
+#app .md-content {
+    height: 100%;
+    border: 0 none;
+}
 
-    #nav {
-        background-color: #4cbd38;
-    }
+#nav {
+    background-color: #4cbd38;
+}
 
-    #nav .logo {
-        width: 77px;
-        height: 44px;
-        background: url('./assets/logo-accent.svg');
-        background-size: 77px 44px;
-        background-repeat: no-repeat;
-    }
+#nav .logo {
+    width: 77px;
+    height: 44px;
+    background: url('./assets/logo-accent.svg');
+    background-size: 77px 44px;
+    background-repeat: no-repeat;
+}
 </style>

@@ -8,8 +8,8 @@
     "plugins": [
         "vue"
     ],
-    "parser": "babel-eslint",
     "parserOptions": {
+        "parser": "babel-eslint",
         "ecmaVersion": 2018,
         "sourceType": "module",
         "ecmaFeatures": {
@@ -41,6 +41,9 @@
         "WeakMap": false,
         "WeakSet": false
     },
+    "extends": [
+        "plugin:vue/recommended"
+    ],
     "rules": {
         "strict": "off",
         "accessor-pairs": "off",
@@ -391,6 +394,10 @@
             {
                 "properties": "never"
             }
+        ],
+        "vue/name-property-casing": [
+            "off",
+            "PascalCase"
         ],
         "capitalized-comments": [
             "off",

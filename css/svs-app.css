@@ -29,7 +29,7 @@
 #svs-app-main .svs-loading-cell {
     width: 48px;
     height: 50px;
-    background: url("images/GravityLoading.gif");
+    background: url("https://fofxsoft.com/img/svs-loading.gif");
 }
 
 #svs-app-main .svs-button {
@@ -120,7 +120,12 @@
     overflow: auto;
 }
 
-#svs-app-main .svs-content .svs-resizable {
+#svs-app-main .svs-content .svs-resizable-west {
     border-right: 3px #f3f3f3 solid;
+    box-sizing: border-box;
+}
+
+#svs-app-main .svs-content .svs-resizable-east {
+    border-left: 3px #f3f3f3 solid;
     box-sizing: border-box;
 }

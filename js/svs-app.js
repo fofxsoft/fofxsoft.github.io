@@ -235,6 +235,12 @@ class Services {
         }
     }
 
+    static trigger = {
+        tab(action) {
+            $(`#svs-app-main .svs-tabs[action='${action}']`).click();
+        }
+    }
+
     static enable = {
         tabs(callback) {
             $("#svs-app-main .svs-tabs").unbind("click").on("click", ".svs-tab", (e) => {

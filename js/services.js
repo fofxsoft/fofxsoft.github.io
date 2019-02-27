@@ -2,6 +2,8 @@ let HASH_CHANGE = false;
 
 class Services {
     static initApp(callback) {
+        this.log("Initilize App");
+
         callback();
 
         window.onhashchange = () => {

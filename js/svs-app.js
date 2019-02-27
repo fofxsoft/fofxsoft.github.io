@@ -1,4 +1,4 @@
-let HASH_CHANGE = false;
+window.HASH_CHANGE = false;
 
 class Services {
     static initApp(callback) {
@@ -232,3 +232,5 @@ class Services {
         }
     }
 }
+
+window.svs = Services;

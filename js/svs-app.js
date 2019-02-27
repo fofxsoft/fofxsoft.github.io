@@ -234,3 +234,7 @@ class Services {
 }
 
 window.svs = Services;
+
+$(() => {
+    $(document).trigger("appload");
+});

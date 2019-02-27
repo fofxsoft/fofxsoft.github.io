@@ -1,6 +1,6 @@
 window.hashChange = false;
 
-class Svs {
+class Services {
     static init(callback) {
         this.log("Initilize App");
 
@@ -232,3 +232,5 @@ class Svs {
         }
     }
 }
+
+window.svs = Services;

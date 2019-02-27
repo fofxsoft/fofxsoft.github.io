@@ -234,6 +234,7 @@ class Services {
 }
 
 window.svs = Services;
+window.@ = Services;
 
 $(() => {
     $(document).trigger("appload");

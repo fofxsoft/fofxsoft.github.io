@@ -1,7 +1,10 @@
 window.hashChange = false;
+window.args = {};
 
 class Services {
     static init(callback) {
+        window.args = this.getArgs();
+
         this.log("Initilize App");
 
         callback();
@@ -26,19 +29,19 @@ class Services {
     }
 
     static getArgs() {
-        return Services.parseJson(atob(window.location.hash.replace(/#/i, "")));
+        return this.parseJson(this.base64.decodeUrl(window.location.hash.replace(/#/i, "")));
     }
 
-    static setArgs(value) {
+    static setArgs() {
         window.hashChange = true;
 
-        if (value && typeof value === "object") {
-            window.location.hash = `#${btoa(JSON.stringify(value))}`;
+        if (window.args && typeof window.args === "object") {
+            window.location.hash = `#${this.base64.encodeUrl(JSON.stringify(window.args))}`;
         } else {
             window.location.hash = "";
         }
 
-        Services.log(window.location);
+        this.log(window.location);
     }
 
     static parseJson(value) {
@@ -229,6 +232,54 @@ class Services {
             }
 
             return atob(value.replace(/_/g, "/").replace(/-/g, "+"));
+        }
+    }
+
+    static enable = {
+        tabs(callback) {
+            $("#svs-app-main .svs-tabs").unbind("click").on("click", ".svs-tab", (e) => {
+                const tab = $(e.currentTarget);
+
+                tab.parent().find(".svs-tab").removeClass("svs-active");
+                tab.addClass("svs-active");
+
+                const action = tab.attr("action");
+
+                if (action && action !== "") {
+                    window.args.action = action;
+                    window.svs.log(`Action: ${action}`);
+
+                    callback(action);
+                }
+            });
+        },
+
+        panels() {
+            if (!window.args.panel) {
+                window.args.panel = {}
+            }
+    
+            if (!window.args.panel.west || Number.isNaN(parseFloat(window.args.panel.west))) {
+                window.args.panel.west = 350;
+            }
+    
+            if (!window.args.panel.east || Number.isNaN(parseFloat(window.args.panel.east))) {
+                window.args.panel.east = 350;
+            }
+
+            $("#svs-app-main .svs-resizable-west").width(window.args.panel.west).resizable({
+                handles: "e",
+                stop: (event, ui) => {
+                    window.args.panel.west = ui.size.width;
+                }
+            });
+
+            $("#svs-app-main .svs-resizable-east").width(window.args.panel.east).resizable({
+                handles: "w",
+                stop: (event, ui) => {
+                    window.args.panel.east = ui.size.width;
+                }
+            });
         }
     }
 }

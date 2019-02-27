@@ -6,10 +6,9 @@ Welcome the the services development home.
 HTML boilderplate
 ```html
 <!--
-    Include the services common code.
+    Include the services common styles.
 -->
 <link rel="stylesheet" type="text/css" href="https://fofxsoft.com/css/svs-app.css">
-<script type="text/javascript" src="https://fofxsoft.com/js/svs-app.js"></script>
 
 <div id="svs-app-main">
 
@@ -19,6 +18,11 @@ HTML boilderplate
     -->
 
 </div>
+
+<!--
+    Include the services common scripts
+-->
+<script async defer src="https://fofxsoft.com/js/svs-app.js" onload="this.onload = function(){}; init()" onreadystatechange="if (this.readyState === 'complete') this.onload()"></script>
 ```
 
 JavaScript bolierplate
@@ -64,7 +68,7 @@ class Main {
      */
 }
 
-$(() => {
+const init = function init() {
     Services.initApp(() => {
         const app = new Main("#svs-app-main");
 
@@ -73,7 +77,7 @@ $(() => {
          * or any other initial code that is not called in the Main constructor.
          */
     });
-});
+};
 
 
 ```

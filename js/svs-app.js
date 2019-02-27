@@ -237,7 +237,7 @@ class Services {
 
     static trigger = {
         tab(action) {
-            $(`#svs-app-main .svs-tabs[action='${action}']`).click();
+            $(`#svs-app-main .svs-tabs .svs-tab[action='${action}']`).click();
         }
     }
 

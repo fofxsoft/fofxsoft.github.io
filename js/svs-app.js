@@ -1,4 +1,4 @@
-window.HASH_CHANGE = false;
+window.hashChange = false;
 
 class Services {
     static initApp(callback) {
@@ -7,16 +7,16 @@ class Services {
         callback();
 
         window.onhashchange = () => {
-            if (!HASH_CHANGE) {
+            if (!window.hashChange) {
                 callback();
             }
 
-            HASH_CHANGE = false;
+            window.hashChange = false;
         };
     }
 
     static log(val, critical) {
-        if (DEBUG || critical) {
+        if (window.debug || critical) {
             if (typeof val === "object") {
                 console.log(JSON.stringify(val, null, 4));
             } else {
@@ -30,7 +30,7 @@ class Services {
     }
 
     static setArgs(value) {
-        HASH_CHANGE = true;
+        window.hashChange = true;
 
         if (value && typeof value === "object") {
             window.location.hash = `#${btoa(JSON.stringify(value))}`;
@@ -194,7 +194,7 @@ class Services {
         cacheTime() {
             const date = new Date();
     
-            return `${Services.date.format(date)} ${this.format(date)}`;
+            return `${window.svs.date.format(date)} ${this.format(date)}`;
         }
     }
 

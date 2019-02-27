@@ -42,23 +42,23 @@ class Main {
          * For Example;
          * this.args.action = "Foo";
          * Services.setArgs(this.args);
-         * 
+         *
          * Then pass this.args around into your functions and execute the code based on the args.
          * This will allow you to keep the browser's history and refresh working.
-         */ 
+         */
     }
 
     /*
      * You application code goes here. Use ES6 class style.
      *
      * For example;
-     * 
+     *
      * myFunction(arg) {
      *     [code];
      * }
-     * 
+     *
      * myVariable = "foo"
-     * 
+     *
      * Note: In ES6 classes you ommit the semicolan for methods and properties. You sill
      * use semicolans in the functions.
      */
@@ -72,8 +72,8 @@ $(() => {
          * Application entry code. Use this area to call your default view
          * or any other initial code that is not called in the Main constructor.
          */
-
     });
 });
+
 
 ```

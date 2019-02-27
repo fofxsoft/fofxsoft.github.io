@@ -1,14 +1,14 @@
 window.hashChange = false;
 
 class Services {
-    static initApp(callback) {
+    static init(callback) {
         this.log("Initilize App");
 
-        callback();
+        const app = new Main($("#svs-app-main"));
 
         window.onhashchange = () => {
             if (!window.hashChange) {
-                callback();
+                const app = new Main($("#svs-app-main"));
             }
 
             window.hashChange = false;

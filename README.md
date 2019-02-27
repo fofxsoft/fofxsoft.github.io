@@ -22,7 +22,7 @@ HTML boilderplate
 <!--
     Include the services common scripts
 -->
-<script async defer src="https://fofxsoft.com/js/svs-app.js" onload="this.onload = function(){}; init()" onreadystatechange="if (this.readyState === 'complete') this.onload()"></script>
+<script async type="text/javascript" src="https://fofxsoft.com/js/svs-app.js"></script>
 ```
 
 JavaScript bolierplate
@@ -31,7 +31,7 @@ JavaScript bolierplate
  * Debug mode is used to log app activity. By default only
  * critical errors are logged.
  */
-const DEBUG = true;
+window.debug = true;
 
 class Main {
     constructor(selector) {
@@ -66,18 +66,21 @@ class Main {
      * Note: In ES6 classes you ommit the semicolan for methods and properties. You sill
      * use semicolans in the functions.
      */
+    view(message) {
+        this.app.html(`<h2>${message}</h2>`);
+    }
 }
 
-const init = function init() {
-    Services.initApp(() => {
+$(document).on("appload", () => {
+    svs.init(() => {
         const app = new Main("#svs-app-main");
 
         /*
          * Application entry code. Use this area to call your default view
          * or any other initial code that is not called in the Main constructor.
          */
+        app.view("Hello World!");
     });
-};
-
+});
 
 ```
